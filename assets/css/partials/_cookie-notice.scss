@@ -1,0 +1,42 @@
+ .cookienotice-box {
+     @extend .ml-auto,
+     .p-4;
+     background-color: $primary;
+     color: #fff;
+     position: fixed;
+     z-index: 200;
+     right: 24px;
+     bottom: 32px;
+     width: 268px;
+     &__§ {
+         font-family: $font-family-§;
+         font-size: 16px;
+         font-weight: 400;
+         margin-bottom: 16px;
+     }
+     &__link {
+         font-family: $font-family-base;
+         font-size: 24px;
+         color: $white;
+         font-style: normal;
+         font-weight: $font-weight-bolder;
+         line-height: 24px;
+         display: inline-block;
+         transition: 1s;
+         &:hover {
+             transform: translateX(8px);
+             color: $white;
+             transition: transform 1s;
+         }
+     }
+     &__close {
+         @extend .ml-auto,
+         .mt-0,
+         .mb-1;
+         color: $white;
+         &:hover {
+             text-decoration: none;
+             color: $white;
+         }
+     }
+ }

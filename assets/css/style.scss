@@ -1,0 +1,50 @@
+/*!
+Theme Name: 8
+Theme URI: https://studio60.ch
+Description: Theme provided by studio60.ch
+Author: Isaac Aristil & Fabien Dupont
+Version: 0.1
+*/
+
+
+/**
+ * General styles
+ */
+
+@import "variables";
+@import "base";
+@import "reset";
+@import "styles";
+@import "cursor";
+//@import "./vendor/gfonts";
+
+/**
+ * Layout styles
+ */
+
+@import "layout/header";
+@import "layout/section";
+@import "layout/footer";
+
+/**
+ * Partials
+ */
+
+@import "partials/btn";
+@import "partials/border";
+@import "partials/typography";
+@import "partials/icons";
+@import "partials/images";
+//@import "partials/contact-form";
+//@import "partials/circle-images;
+//@import "partials/cookie-notice";
+@import "partials/popup";
+@import "partials/overlay-menu";
+
+/**
+ * Vendor
+ */
+
+@import "./vendor/aos";
+@import "./vendor/slick";
+@import "./vendor/gform";

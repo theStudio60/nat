@@ -1,0 +1,76 @@
+.circle-col {
+    @extend .my-auto,
+    .mx-0,
+    .p-0;
+    &--giant {
+        @extend .w-100,
+        .mx-auto;
+    }
+}
+
+.circle-image-belt {
+    border-radius: 50%;
+    height: 506px;
+    width: 506px;
+    margin: auto;
+    @media (max-width: $screen-md-min) {
+        height: 90vw;
+        width: 90vw;
+        margin: auto;
+    }
+    &--primary {
+        border: 1px solid $primary;
+    }
+    &--purple {
+        border: 1px solid $purple;
+    }
+    &--orange {
+        border: 1px solid $orange;
+    }
+    &--white {
+        border: 1px solid $white;
+    }
+    &--teal {
+        border: 1px solid $teal;
+    }
+    &--light {
+        border: 1px solid $light;
+    }
+    &--dark {
+        border: 1px solid $dark;
+    }
+    &--black {
+        border: 1px solid $black;
+    }
+    &--giant {
+        @extend .m-auto;
+        border-radius: 50%;
+        height: 80vh;
+        width: 80vh;
+    }
+}
+
+.circle-image {
+    opacity: 50%;
+    border-radius: 50%;
+    height: 358px;
+    width: 358px;
+    margin: 74px;
+    background-position: center;
+    background-size: cover;
+    @media (max-width: $screen-md-min) {
+        opacity: 40%;
+        height: 70vw;
+        width: 70vw;
+        margin: 10vw;
+    }
+    &--giant {
+        opacity: 30%;
+        border-radius: 50%;
+        height: 60vh;
+        width: 60vh;
+        margin: 10vh;
+        background-position: center;
+        background-size: cover;
+    }
+}

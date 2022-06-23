@@ -1,0 +1,36 @@
+.popup {
+    @extend .h-100,
+    .w-100,
+    .fixed-top;
+    background: rgba(0, 0, 0, 0.5);
+    height: auto;
+    position: absolute;
+    z-index: 20!important;
+    .container {
+        .row {
+            .col {
+                @extend .col-12,
+                .h-100;
+                .content {
+                    @extend .bg-light,
+                    .m-4,
+                    .p-4,
+                    .rounded;
+                }
+            }
+        }
+    }
+    &__header {
+        @extend .d-flex,
+        .w-100;
+        .close {
+            @extend .ml-auto;
+        }
+    }
+    &--hidden {
+        visibility: hidden!important;
+        display: none!important;
+        height: 0!important;
+        width: 0!important;
+    }
+}

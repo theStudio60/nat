@@ -1,0 +1,23 @@
+.godown-carret {
+    background-color: transparent;
+    left: calc(50% - 16px);
+    position: absolute;
+    top: calc(100vh - 64px);
+    z-index: 300;
+    height: 64px;
+    animation: carretjump 2s linear infinite;
+    @media (max-width: $screen-md-min) {
+        top: calc(100vh - 160px);
+        animation: none;
+    }
+}
+
+@keyframes carretjump {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0, 32px);
+    }
+}
