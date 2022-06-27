@@ -107,13 +107,10 @@
                     let thumbnails = document.querySelectorAll('#thumbnail_section > img');
 
                     thumbnails.forEach(function (thumbnail) {
-                        $(thumbnail).show();
+                        let tags = Object.keys(thumbnail.dataset);
+                        (!tags.includes(tag.id) ? $(thumbnail).hide() : $(thumbnail).show());
                     });
 
-                    thumbnails.forEach(function (thumbnail) {
-                        let tags = Object.keys(thumbnail.dataset);
-                        if (!tags.includes(tag.id)) $(thumbnail).hide();
-                    });
                 }
 
             })
