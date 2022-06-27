@@ -1,24 +1,7 @@
 <?php
 
-    $query = new WP_Query(array(
-        'post_type' => 'oeuvre',
-        'post_status' => 'publish'
-    ));
-
-    $posts = [];
-    $tags = [];
-
-    while ($query->have_posts()) {
-        $query->the_post();
-        $post_id = get_the_ID();
-        $post_fields = get_fields();
-        $post_fields['id'] = get_the_ID();
-        $posts[] = $post_fields;
-        foreach($post_fields['tags'] as $tag) {
-            isset($tags[$tag]) ? $tags[$tag]++ : $tags[$tag] = 1;
-        }
-
-    }
+    $posts = $args['posts'];
+    $tags = $args['tags'];
 
     foreach(array_keys($tags) as $tag) {
         $tagHydrated = get_tag($tag);

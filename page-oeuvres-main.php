@@ -65,7 +65,30 @@
                     <h1 class="title title--white title--centered border">Oeuvres</h1>
 
                     <?php
-                        get_template_part('/partials/sections/oeuvres/oeuvres', 'list');
+
+                        $query = new WP_Query(array(
+                            'post_type' => 'oeuvre',
+                            'post_status' => 'publish'
+                        ));
+
+                        $posts = [];
+                        $tags = [];
+
+                        while ($query->have_posts()) {
+                            $query->the_post();
+                            $post_id = get_the_ID();
+                            $post_fields = get_fields();
+                            $post_fields['id'] = get_the_ID();
+                            $posts[] = $post_fields;
+                            foreach($post_fields['tags'] as $tag) {
+                                isset($tags[$tag]) ? $tags[$tag]++ : $tags[$tag] = 1;
+                            }
+
+                        }
+
+                        $data = ["posts" => $posts, "tags" => $tags];
+
+                        get_template_part('/partials/sections/oeuvres/oeuvres', 'list', $data);
                     ?>
 
                 </div>
