@@ -94,11 +94,9 @@
 
                 } else {
 
-                    let spanTags = document.querySelectorAll('.spanTag');
+                    let spanTag = document.querySelectorAll('.activeTag');
 
-                    spanTags.forEach(function (spanTag) {
-                        $(spanTag).removeClass('activeTag');
-                    });
+                    $(spanTag).removeClass('activeTag');
 
                     $(this).addClass('activeTag');
 
