@@ -94,7 +94,7 @@
 
                 } else {
 
-                    let spanTag = document.querySelectorAll('.activeTag');
+                    let spanTag = document.querySelector('.activeTag');
 
                     $(spanTag).removeClass('activeTag');
 
