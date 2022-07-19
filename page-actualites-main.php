@@ -28,6 +28,11 @@ get_header();
                     <div class="section--atf__content bg-dark">
                         <h1 class="title title--white title--centered border"><?php the_title();?></h1>
 
+ 
+<p class="§ §--white pt-0">
+  
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam et veniam expedita, at esse magnam perferendis nemo asperiores aliquid sequi quisquam id sapiente distinctio ab? Optio porro debitis placeat saepe!
+</p>
                         <?php
                             get_template_part('/partials/sections/actualites/actualites', 'list');
                         ?>
