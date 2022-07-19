@@ -4,7 +4,13 @@ Theme URI: https://studio60.ch
 Description: Theme provided by studio60.ch
 Author: Isaac Aristil & Fabien Dupont
 Version: 0.1
-*//*! Bootstrap v4.5.0 (https://getbootstrap.com/) Copyright 2011-2020 The Bootstrap Authors Copyright 2011-2020 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) */:root{--blue:#4985c8;--indigo:#3d152e;--purple:#7b2b5c;--pink:#e5065b;--red:#db002f;--orange:#ff5725;--yellow:#ffc107;--green:#87bd30;--teal:#0fc;--cyan:#a6f5ff;--white:#fff;--gray:#a9a9a9;--gray-dark:#666;--primary:#0fc;--secondary:#fff;--success:#87bd30;--info:#a6f5ff;--warning:#ffc107;--danger:#db002f;--light:#b8aaaa;--dark:#000;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:"PT Sans Narrow",-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+*//*!
+ * Bootstrap v4.5.0 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * Copyright 2011-2020 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ *
+*/:root{--blue:#4985c8;--indigo:#3d152e;--purple:#7b2b5c;--pink:#e5065b;--red:#db002f;--orange:#ff5725;--yellow:#ffc107;--green:#87bd30;--teal:#0fc;--cyan:#a6f5ff;--white:#fff;--gray:#a9a9a9;--gray-dark:#666;--primary:#0fc;--secondary:#fff;--success:#87bd30;--info:#a6f5ff;--warning:#ffc107;--danger:#db002f;--light:#b8aaaa;--dark:#000;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:"PT Sans Narrow",-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
 *,*::before,*::after{-webkit-box-sizing:border-box;box-sizing:border-box}
 html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}
 article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}

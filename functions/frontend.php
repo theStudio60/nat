@@ -111,5 +111,3 @@ function login_logo() { ?>
 add_action('login_enqueue_scripts', 'login_logo');
 add_filter('login_headertitle', '__return_empty_string');
 add_filter('login_headerurl', 'get_home_url');
-
-
