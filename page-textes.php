@@ -21,7 +21,10 @@ endif;
 //*/
 ?> 
 
-<div  class=" section--atf__container " style=" ">
+
+<div style="height:25vh;"></div>
+ <section id=" " class="section">
+  <div class="section__container">
             <div class="section__row">
 
 
@@ -29,7 +32,7 @@ endif;
 
                     <h1 class="title title--white title--centered border"><?php the_title();?></h1>
  
-                    <p class="§ §--white pt-0">
+                    <p class="§ §--white pt-0 mb-4">
 
                     <?php
                     while ( have_posts() ) :
@@ -37,7 +40,9 @@ endif;
                     endwhile; 
                     ?>
                     </p>
-                    <?php $loop = new WP_Query(array(
+<br>
+                    <?php 
+                    $loop = new WP_Query(array(
                     'post_type' => 'textes',
                     'posts_per_page' => '-1',
                     'orderby' => 'date',
@@ -46,30 +51,25 @@ endif;
                    ));
                     while($loop->have_posts() ) : 
                       $loop->the_post();  
-                      $thisImg = get_field('img');
-                      $thisImgSize='large';
-                      $thisImgUrl=$thisImg['sizes'][$thisImgSize]; 
+                       
                       $link = get_field('link');
-                  ?> 
-                      <div class="col">
-                        <div class="card"  >
-                          <div class="card-header" style="background-image:url(<?= $thisImgUrl;?>);">
-                          </div>
-                          <div class="card-body">
-                            <h3 class=" "><?php the_title(); ?></h3>
-                            <?php // the_title( '<h3 class="books__card__title"><a href="' . get_permalink() . '" title="' . the_title_attribute( 'echo=0' ) . '" rel="bookmark">', '</a></h3>' ); ?> 
-                            <p class=" "><?php the_field('description' /*, $post_id*/);?>
-                            </p>
-                            <?php if( $link ): 
-                              $link_url = $link['url'];
-                              $link_title = $link['title'];
-                              $link_target = $link['target'] ? $link['target'] : '_blank';
-                            ?>
-                              <button type="button" onclick="window.location.href='<?php echo esc_url( $link_url ); ?>'"   target="<?php echo esc_attr( $link_target ); ?>" class="books__card__cta btn btn--primary"><?php echo esc_html( $link_title ); ?></button> 
-                            <?php endif; ?>
-                          </div>
+                    ?> 
+                      <div class="" onclick="location.href='<?php the_permalink(); ?>'" >
+          
+                        <div
+                         class="p-5" 
+                         style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);"
+                        > 
+
                         </div>
+
+                        <div class="py-3 border-top border-bottom title title--white title--centered">
+                            <h3 class=" "><?php the_title(); ?></h3>
+                        </div>
+                        
+
                       </div>
+                      
                     <?php endwhile?> 
                   <?php wp_reset_postdata();?>
                     
@@ -78,6 +78,7 @@ endif;
 
             </div>
         </div>
+      </section>
 
 
 
