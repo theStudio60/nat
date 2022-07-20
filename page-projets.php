@@ -21,16 +21,15 @@ get_header();
         <h1 class="title title--white title--centered border"><?php the_title();?></h1>
 
  
-            <p class="§ §--white pt-0">
+        <p class="§ §--white pt-0">
               
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam et veniam expedita, at esse magnam perferendis nemo asperiores aliquid sequi quisquam id sapiente distinctio ab? Optio porro debitis placeat saepe!
-          </p>
-   <?php
-   while ( have_posts() ) :
-    the_post(); the_content();
-  endwhile;
-   
-   ?>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam et veniam expedita, at esse magnam perferendis nemo asperiores aliquid sequi quisquam id sapiente distinctio ab? Optio porro debitis placeat saepe!
+        </p>
+        <?php
+        while ( have_posts() ) :
+          the_post(); the_content();
+        endwhile; 
+        ?>
     <div id="accordion" class="p-2" >
       <div class="card-header" id="headingOne">
         <h5 class="mb-0">
@@ -99,5 +98,6 @@ get_header();
     </div>
   </div>
 </section>
+
 <?php
 get_footer(); 
