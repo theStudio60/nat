@@ -1092,13 +1092,13 @@ input.burger:checked ~ .burger-menu li a{padding-right:1rem}
 input.burger:checked ~ label>i{background-color:transparent}
 input.burger:checked ~ label>i:before{-webkit-transform:translate(-50%,-50%) rotate(45deg);transform:translate(-50%,-50%) rotate(45deg)}
 input.burger:checked ~ label>i:after{-webkit-transform:translate(-50%,-50%) rotate(-45deg);transform:translate(-50%,-50%) rotate(-45deg)}
-label.burger{top:0;left:2rem;z-index:9999;position:relative;display:block;height:40px;width:36px}
+label.burger{top:2rem;left:2rem;z-index:9999;position:relative;display:block;height:40px;width:40px}
 label.burger:hover{cursor:pointer}
-label.burger>i{position:absolute;width:100%;height:1px;top:50%;background-color:#fff;pointer-events:auto;-webkit-transition-duration:.35s;transition-duration:.35s;-webkit-transition-delay:.35s;transition-delay:.35s}
+label.burger>i{position:absolute;width:32px;height:1px;top:50%;background-color:#fff;pointer-events:auto;-webkit-transition-duration:.35s;transition-duration:.35s;-webkit-transition-delay:.35s;transition-delay:.35s}
 label.burger>i:before,label.burger>i:after{position:absolute;display:block;width:100%;height:1px;left:50%;background-color:#fff;content:"";-webkit-transition:-webkit-transform .35s;transition:-webkit-transform .35s;transition:transform .35s;transition:transform .35s,-webkit-transform .35s;-webkit-transform-origin:50% 50%;transform-origin:50% 50%}
 label.burger>i:before{-webkit-transform:translate(-50%,-16px);transform:translate(-50%,-16px)}
 label.burger>i:after{-webkit-transform:translate(-50%,16px);transform:translate(-50%,16px)}
-label.burger--default{background-color:transparent}
+label.burger--default{padding:2px;background-color:black;border:1px solid #b8aaaa}
 label.burger--default>i{background-color:#fff}
 label.burger--default>i:before,label.burger--default>i:after{background-color:#fff}
 label.burger--white{background-color:#0fc}

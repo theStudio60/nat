@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page Textes et Nouvelles
+ * Template Name: page audios
  *
  * @package studio_soixante
  */
@@ -16,13 +16,13 @@ get_header();
           <?php
           while ( have_posts() ) :
             the_post(); the_content();
-          endwhile; 
+          endwhile;  
           ?>
         </p>
         <br>
         <?php 
         $loop = new WP_Query(array(
-        'post_type' => 'textes',
+        'post_type' => 'multimedia-graphisme',
         'posts_per_page' => '-1',
         'orderby' => 'date',
         'order' => 'DESC',

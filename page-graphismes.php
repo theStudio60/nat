@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page Textes et Nouvelles
+ * Template Name: page graphismes
  *
  * @package studio_soixante
  */
@@ -22,7 +22,7 @@ get_header();
         <br>
         <?php 
         $loop = new WP_Query(array(
-        'post_type' => 'textes',
+        'post_type' => 'multimedia-graphisme',
         'posts_per_page' => '-1',
         'orderby' => 'date',
         'order' => 'DESC',

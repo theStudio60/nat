@@ -128,13 +128,13 @@ input.burger {
 label.burger {
     //background-color: rgba($black, 1);
     @extend .my-1;
-    top: 0;
+    top: $spacer*2;
     left: $spacer*2;
     z-index: 9999;
     position: relative;
     display: block;
     height: 40px;
-    width: 36px;
+    width: 40px;
     &:hover {
         cursor: pointer;
     }
@@ -164,7 +164,7 @@ label.burger {
     }
     >i {
         position: absolute;
-        width: 100%;
+        width: 32px;
         height: 1px;
         top: 50%;
         background-color: $white;
@@ -191,7 +191,9 @@ label.burger {
         }
     }
     &--default {
-        background-color: transparent;
+        padding: 2px;
+        background-color: black;
+        border: 1px solid $gray-300;
         >i {
             background-color: $white;
             &:before,

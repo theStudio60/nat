@@ -25,221 +25,87 @@ get_header();
 
     </div>
     <div class="row m-0 p-0">
-    <a href="#" class="col-12 col-lg-4 my-3">
-        <div
-        class="image-wrapper border"
-        style="background:url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80)";
-        >
-          <div class="image-wrapper__overlay ">
-            <div class="image-wrapper__content">
-              <div class="image-wrapper__content__block  align-self-center">
-                <h3 class="border p-2">title</h3>
-                <small class="p-2 ">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas beatae aliquam perspiciatis.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </a>
+
+
+    <?php  
+            
+  /* Start the Loop */
+
+   while ( have_posts() ) :
+     the_post();
+     get_template_part( 'template-parts/content-oeuvre', get_post_type() );
+   endwhile;
  
-      <a href="#" class="col-12 col-lg-4 my-3">
-        <div
-        class="image-wrapper border"
-        style="background:url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80)";
-        >
-          <div class="image-wrapper__overlay ">
-            <div class="image-wrapper__content">
-              <div class="image-wrapper__content__block  align-self-center">
-                <h3 class="border p-2">title</h3>
-                <small class="p-2 ">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas beatae aliquam perspiciatis.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </a>
 
-      <a href="#" class="col-12 col-lg-4 my-3">
-        <div
-        class="image-wrapper border"
-        style="background:url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80)";
-        >
-          <div class="image-wrapper__overlay ">
-            <div class="image-wrapper__content">
-              <div class="image-wrapper__content__block  align-self-center">
-                <h3 class="border p-2">title</h3>
-                <small class="p-2 ">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas beatae aliquam perspiciatis.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </a>
 
-      <a href="#" class="col-12 col-lg-4 my-3">
-        <div
-        class="image-wrapper border"
-        style="background:url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80)";
-        >
-          <div class="image-wrapper__overlay ">
-            <div class="image-wrapper__content">
-              <div class="image-wrapper__content__block  align-self-center">
-                <h3 class="border p-2">title</h3>
-                <small class="p-2 ">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas beatae aliquam perspiciatis.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </a>
-      <a href="#" class="col-12 col-lg-4 my-3">
-        <div
-        class="image-wrapper border"
-        style="background:url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80)";
-        >
-          <div class="image-wrapper__overlay ">
-            <div class="image-wrapper__content">
-              <div class="image-wrapper__content__block  align-self-center">
-                <h3 class="border p-2">title</h3>
-                <small class="p-2 ">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas beatae aliquam perspiciatis.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </a>
+    
+
+
+        $loop = new WP_Query(array(
+        'post_type' => 'oeuvres',
+        'posts_per_page' => '-1',
+        'orderby' => 'name',
+        'order' => 'DESC',
+        'offset' => 0
+        ));
  
-      <a href="#" class="col-12 col-lg-4 my-3">
-        <div
-        class="image-wrapper border"
-        style="background:url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80)";
-        >
-          <div class="image-wrapper__overlay ">
-            <div class="image-wrapper__content">
-              <div class="image-wrapper__content__block  align-self-center">
-                <h3 class="border p-2">title</h3>
-                <small class="p-2 ">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas beatae aliquam perspiciatis.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </a>
-
-      <a href="#" class="col-12 col-lg-4 my-3">
-        <div
-        class="image-wrapper border"
-        style="background:url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80)";
-        >
-          <div class="image-wrapper__overlay ">
-            <div class="image-wrapper__content">
-              <div class="image-wrapper__content__block  align-self-center">
-                <h3 class="border p-2">title</h3>
-                <small class="p-2 ">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas beatae aliquam perspiciatis.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </a>
-
-      <a href="#" class="col-12 col-lg-4 my-3">
-        <div
-        class="image-wrapper border"
-        style="background:url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80)";
-        >
-          <div class="image-wrapper__overlay ">
-            <div class="image-wrapper__content">
-              <div class="image-wrapper__content__block  align-self-center">
-                <h3 class="border p-2">title</h3>
-                <small class="p-2 ">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas beatae aliquam perspiciatis.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </a>
-      
-      <a href="#" class="col-12 col-lg-4 my-3">
-        <div
-        class="image-wrapper border"
-        style="background:url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80)";
-        >
-          <div class="image-wrapper__overlay ">
-            <div class="image-wrapper__content">
-              <div class="image-wrapper__content__block  align-self-center">
-                <h3 class="border p-2">title</h3>
-                <small class="p-2 ">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas beatae aliquam perspiciatis.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </a>
  
-      <a href="#" class="col-12 col-lg-4 my-3">
-        <div
-        class="image-wrapper border"
-        style="background:url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80)";
-        >
-          <div class="image-wrapper__overlay ">
-            <div class="image-wrapper__content">
-              <div class="image-wrapper__content__block  align-self-center">
-                <h3 class="border p-2">title</h3>
-                <small class="p-2 ">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas beatae aliquam perspiciatis.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </a>
+        $posts = [];
+        $tags = [];
+        
+        while ($loop->have_posts()) {
+            $loop->the_post();
+            $post_id = get_the_ID();
+            $post_fields = get_fields();
+            $post_fields['id'] = get_the_ID();
+            $posts[] = $post_fields;
+            foreach($post_fields['tags'] as $tag) {
+                isset($tags[$tag]) ? $tags[$tag]++ : $tags[$tag] = 1;
+            }
+        
+        }
+        
+        $data = ["posts" => $posts, "tags" => $tags];
+        
+        get_template_part('/partials/sections/oeuvres/oeuvres', 'list', $data);
+               
 
-      <a href="#" class="col-12 col-lg-4 my-3">
-        <div
-        class="image-wrapper border"
-        style="background:url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80)";
-        >
-          <div class="image-wrapper__overlay ">
-            <div class="image-wrapper__content">
-              <div class="image-wrapper__content__block  align-self-center">
-                <h3 class="border p-2">title</h3>
-                <small class="p-2 ">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas beatae aliquam perspiciatis.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </a>
 
-      <a href="#" class="col-12 col-lg-4 my-3">
-        <div
-        class="image-wrapper border"
-        style="background:url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80)";
-        >
-          <div class="image-wrapper__overlay ">
-            <div class="image-wrapper__content">
-              <div class="image-wrapper__content__block  align-self-center">
-                <h3 class="border p-2">title</h3>
-                <small class="p-2 ">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas beatae aliquam perspiciatis.
-                </small>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </a>
 
+        while($loop->have_posts() ) : 
+          $loop->the_post();  
+          //$link = get_field('link');
+          if( have_rows('group_oeuvre') ):
+            while( have_rows('group_oeuvre') ): the_row(); 
+            $desc = get_sub_field('description');
+        ?>
+           
+
+                <?php
+ 
+            endwhile;
+          endif;
+        ?> 
+          <a href="<?php the_permalink(); ?>" class="col-12 col-lg-4 my-3">
+            <div
+            class="image-wrapper border"
+            style="background:url(<?php echo get_the_post_thumbnail_url(); ?>)";
+            >
+              <div class="image-wrapper__overlay ">
+                <div class="image-wrapper__content">
+                  <div class="image-wrapper__content__block  align-self-center">
+                    <h3 class="border p-2"><?php the_title(); ?></h3>
+  
+                    <small class="p-2 ">
+                      <?= $desc ?>
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </a>
+        <?php endwhile?> 
+        <?php wp_reset_postdata();?>
     </div>
   </div> 
 </section>
