@@ -11,7 +11,7 @@ while ( have_posts() ) :
 endwhile;
 
 get_template_part("partials/sections/front-page/homepage","atf");
-echo "Hello world ";
+ 
 get_template_part("partials/sections/front-page/homepage","news");
 get_template_part("partials/sections/front-page/homepage","recent");
 get_template_part("partials/sections/front-page/homepage","selection");
