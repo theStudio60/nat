@@ -10,8 +10,7 @@
     max-height: 80px;
     &__container {
         @extend .container-fluid,
-        .p-2;
-        //border: 1px solid red;        
+        .p-0;
     }
     &__row {
         @extend .row;
@@ -33,25 +32,30 @@
     //*/
 }
 
+.burger-header {
+    height: 64px;
+    background-color: $white;
+}
+
 .burger-menu {
-    border: 1px solid $white;
+    // border: 1px solid $white;
+    //padding: 16px;
     position: fixed;
-    top: 0;
-    height: 100vh;
-    width: 100vw!important;
+    top: 0px;
+    left: 0;
+    //top: -24px;
+    height: calc(100vh);
+    width: 100vw;
     //min-width: 320px;
     transform: translate(100vw, 0);
     /* ie workaround */
     -ms-transform: translatex(-100vw);
     box-sizing: border-box;
-    pointer-events: none;
-    padding-top: 80px;
+    //pointer-events: none;
+    padding-top: 32px;
     transition: width 475ms ease-out, transform 450ms ease, border-radius .8s .1s ease;
-    background: rgba( $black, 0.92);
-    //@include alpha-attribute('background-color', rgba($contrast, 0.8), white);
-    @media (min-width: 768px) {
-        width: 70vw;
-    }
+    border-bottom-left-radius: 100vw;
+    background: rgba( $black, 1);
     .main-menu {
         ul {
             height: 100%;

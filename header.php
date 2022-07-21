@@ -133,7 +133,7 @@ document.addEventListener("mousemove", function(event) {
 
   <header id="masthead" class="header">
     <div class="header__container"> 
-      <div class="d-flex p-2"> 
+      <div class="d-flex p-2 bg-black w-100 h-100"> 
          
       
         <input id="burger" class="burger " type="checkbox"/>
@@ -141,32 +141,36 @@ document.addEventListener("mousemove", function(event) {
           <i></i>
  
         </label>
-        <div class="burger-menu h-100">
- 
-    <div class="main-menu my-auto border m-2">
-    <?php
+
+        <div class="burger-menu h-100 border ">
+
+
+
+        <div class="p-2 border">
+        <div class="burger-header">
+
+            <h3 class="text-black">MENU</h3>
+        </div>
+        <div class="main-menu my-auto border m-2">
+          <?php
           wp_nav_menu( array(
           'theme_location'  => 'header-menu',
           'depth'           => 1, // 1 = no dropdowns, 2 = with dropdowns.
           'container'       => 'div',
           'container_class' => 'd-block border p-2 m-2 ',
           'container_id'    => ' ',
-          'menu_class'      => ' ',
+          'menu_class'      => 'd-flex flex-column',
           'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
           'walker'          => new WP_Bootstrap_Navwalker(),
           ));
  
           ?>
 
-    </div>
+          </div>
 
-  
-
-
-          <?php // get_template_part('partials/nav/menu-themes-mobile')?>
-
-         
-</div> 
+        </div>
+          
+        </div> 
  
 
       </div>
@@ -186,8 +190,9 @@ document.addEventListener("mousemove", function(event) {
   </p>
   <a href="" class="cookienotice-box__link">Accepter</a>
 </div> 
+    <button class="btn button--scrollToTop"><span class="fa far fa-arrow-up text-white"></span></button>
+
 //*/ ?>
 
-    <button class="btn button--scrollToTop"><span class="fa far fa-arrow-up text-white"></span></button>
 
 <?php 
