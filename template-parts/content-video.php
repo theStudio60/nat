@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying textes / nouvelles cpt
+ * Template part for displaying multimedias videos cpt
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -16,12 +16,16 @@
 ?>   
  
 <article  id="post-<?php the_ID(); ?>"
-class="border-top border-bottom py-3
-  w-100 m-0 d-block"
+class="p-2  w-100 m-0 d-block border-top border-bottom"
 style=" "
 >
 
-
+<?php ?>
+<?php ?>
+<?php ?>
+<?php ?>
+<?php ?>
+<?php ?>
 
 
  	<?php the_content(); ?>

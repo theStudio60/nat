@@ -12,14 +12,33 @@ get_header();
     <div class="section__row">
       <div class="col-12 col-md-10 col-lg-9 col-xl-8 p-4">
         <h1 class="title title--white title--centered border"><?php the_title();?></h1>
-        <p class="§ §--white pt-0">
+        <div class="§ §--white my-2 py-2 border-top border-bottom">
           <?php 
+
+
+
+$args = new WP_Query(array(
+        'type' => 'oeuvres',
+        'orderby' => 'name',
+        'order' => 'ASC'
+      )); 
+$tags = get_tags($args);
+
+foreach($tags as $tag) { 
+    var_dump($tag->name);
+}
+
+
+
           /* Start the Loop */
           while ( have_posts() ) :
             the_post(); the_content();
           endwhile;
+ 
+
+
           ?>      
-        </p>
+        </div>
 
       </div>
 
@@ -30,12 +49,13 @@ get_header();
     <?php  
             
   /* Start the Loop */
-
+/*
    while ( have_posts() ) :
      the_post();
      get_template_part( 'template-parts/content-oeuvre', get_post_type() );
    endwhile;
- 
+
+ //*/
 
 
     
@@ -47,45 +67,20 @@ get_header();
         'orderby' => 'name',
         'order' => 'DESC',
         'offset' => 0
-        ));
- 
- 
-        $posts = [];
-        $tags = [];
-        
-        while ($loop->have_posts()) {
-            $loop->the_post();
-            $post_id = get_the_ID();
-            $post_fields = get_fields();
-            $post_fields['id'] = get_the_ID();
-            $posts[] = $post_fields;
-            foreach($post_fields['tags'] as $tag) {
-                isset($tags[$tag]) ? $tags[$tag]++ : $tags[$tag] = 1;
-            }
-        
-        }
-        
-        $data = ["posts" => $posts, "tags" => $tags];
-        
-        get_template_part('/partials/sections/oeuvres/oeuvres', 'list', $data);
-               
-
+        )); 
 
 
         while($loop->have_posts() ) : 
           $loop->the_post();  
+
           //$link = get_field('link');
           if( have_rows('group_oeuvre') ):
             while( have_rows('group_oeuvre') ): the_row(); 
             $desc = get_sub_field('description');
-        ?>
-           
-
-                <?php
- 
-            endwhile;
-          endif;
+            $tags = get_sub_field('tags');
+            
         ?> 
+        
           <a href="<?php the_permalink(); ?>" class="col-12 col-lg-4 my-3">
             <div
             class="image-wrapper border"
@@ -104,6 +99,11 @@ get_header();
               </div>
             </div> 
           </a>
+          <?php
+ 
+endwhile;
+endif;
+?> 
         <?php endwhile?> 
         <?php wp_reset_postdata();?>
     </div>

@@ -24,19 +24,21 @@ if ( has_post_thumbnail() ) {
 //*/
 ?> 
 <div style="height:25vh;"></div>
-<section class="section" >
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-12 col-md-10 col-lg-9 col-xl-6">
-         
+<section id=" " class="section">
+  <div class="section__container">
+    <div class="section__row">
+      <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+        <h1 class="title title--white title--centered border"><?php the_title();?></h1>
+        <div class="§ §--white  my-4 py-3 border-top border-bottom">
         <?php 
- 
+  
           /* Start the Loop */
           while ( have_posts() ) :
 
             the_post(); the_content();
           endwhile;
         ?>
+        </div>
       </div>
     </div>
   </div>

@@ -19,7 +19,19 @@ get_header();
           endwhile; 
           ?>
         </p>
-        <br>
+
+        
+      <div class="my-4 py-4 w-100 border-top border-bottom">
+        <div class="d-flex w-100 justify-content-around">
+          <button class="button p-3">Nouvelles</button>
+          <button class="button p-3">Poésies</button>
+        </div>
+      </div>
+      <div class="mt-4 w-100   ">
+        <div class="d-flex w-100">
+          <h3 class="text-white title--centered border p-4">Nouvelles</h3>
+        </div>
+      </div>
         <?php 
         $loop = new WP_Query(array(
         'post_type' => 'textes',
@@ -32,10 +44,12 @@ get_header();
           $loop->the_post();  
           //$link = get_field('link');
         ?> 
-          <div class="" onclick="location.href='<?php the_permalink(); ?>'" >
+          <div class="py-2 border-top" onclick="location.href='<?php the_permalink(); ?>'" >
             <div
              class="p-5" 
-             style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);"
+             style="
+              background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);
+              height:240px;background-repeat:no-repeat;background-size:cover;background-position:center;cursor:pointer"
             > 
             </div>
             <div class="py-3 border-top border-bottom title title--white title--centered">

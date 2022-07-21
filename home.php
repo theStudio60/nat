@@ -52,9 +52,9 @@ if ( has_post_thumbnail() ) {
               > 
               </div>
               <div class="w-100 d-flex p-2 border-top border-bottom">
-                  <div class="ml-0 mr-2 my-auto px-2  border-left border-right § §--white ">
+                  <span class="ml-0 mr-2 my-auto px-2  border-left border-right § §--white ">
                     <?php echo the_date();?>
-                  </div>
+                  </span>
                   <h3
                   onclick="location.href='<?php the_permalink(); ?>'" 
                   class="subtitle subtitle--white my-auto ml-2" > <?php the_title(); ?>  </h3> 
@@ -64,9 +64,9 @@ if ( has_post_thumbnail() ) {
 						  	$this_excerpt_result =  wp_trim_words( $this_excerpt, 140, ' ...  '); 
 						  	//echo $this_excerpt_result ;
 						  	?>
-						  	<div class="§--white § border-bottom py-2 my-2">
+						  	<p class="§ §--white § border-bottom py-2 my-2">
 						  		<?= $this_excerpt_result ?>
-						  	</div>
+                </p>
                 <button 
                 onclick="location.href='<?php the_permalink(); ?>'"
                 class="button button--fluid mb-2">

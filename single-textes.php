@@ -20,16 +20,30 @@ endif;
 //*/
 ?> 
  
+ <div style="height:25vh;"></div>
+<section id=" " class="section">
+  <div class="section__container">
+    <div class="section__row">
 
- <section id=" " class="section  p-4 h-100 w-100 d--block">
-  <div class="container-fluid  p-2 w-100 h-100">
-    <div class="row  p-2 w-100">
+    <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+        <h1 class="title title--white title--centered border"><?php the_title();?></h1>
+    
 
- 
-     
-  
-            <h1 class="title title--white title--centered "><?php the_title();?></h1>
-  
+        <?php 
+/*
+if( $tags ): ?>
+    <ul>
+    <?php foreach( $tags as $tag ): ?>
+        <li>
+            <h2><?php echo esc_html( $tag->name ); ?></h2>
+            <p><?php echo esc_html( $tag->description ); ?></p>
+            <a href="<?php echo esc_url( get_term_link( $tag ) ); ?>">View all '<?php echo esc_html( $tag->name ); ?>' posts</a>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+<?php endif; 
+//*/
+?>
            
               <?php
               /* Start the Loop */
@@ -40,6 +54,7 @@ endif;
                endwhile;
              
               ?>
+                </div>
          </div>
                  
   </div>
