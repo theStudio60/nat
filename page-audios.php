@@ -11,8 +11,8 @@ get_header();
   <div class="section__container">
     <div class="section__row">
       <div class="col-12 col-md-10 col-lg-9 col-xl-8">
-        <h1 class="title title--white title--centered border"><?php the_title();?></h1>
-        <p class="§ §--white pt-0 mb-4">
+        <h1 class="title title--black bg-white title--centered border"><?php the_title();?></h1>
+        <p class="§ §--white  mb-4">
           <?php
           while ( have_posts() ) :
             the_post(); the_content();
@@ -20,9 +20,9 @@ get_header();
           ?>
         </p>
         <br>
-        <?php 
+        <?php  
         $loop = new WP_Query(array(
-        'post_type' => 'multimedia-graphisme',
+        'post_type' => 'multimedia-audio',
         'posts_per_page' => '-1',
         'orderby' => 'date',
         'order' => 'DESC',
@@ -32,16 +32,105 @@ get_header();
           $loop->the_post();  
           //$link = get_field('link');
         ?> 
-          <div class="" onclick="location.href='<?php the_permalink(); ?>'" >
+        <?php 
+          if( have_rows('group_multimedia-audios') ): 
+            while( have_rows('group_multimedia-audios') ): the_row();  
+              $file = get_sub_field('file');
+              $type = get_sub_field('type');
+              $duration = get_sub_field('duration');
+              $year = get_sub_field('date');
+               
+           ?>
+
+            <?php endwhile; ?>
+          <?php endif ; ?>
+          <div class="my-4" >
+          <?php 
+          /*
             <div
              class="p-5" 
              style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);"
             > 
             </div>
-            <div class="py-3 border-top border-bottom title title--white title--centered">
-                <h3 class=" "><?php the_title(); ?></h3>
+            //*/ ?>
+             
+            <div class="py-3 my-2 border-top border-bottom  title--centered">
+
+            <?php  if ($file) : ?>  
+              <div
+              onclick="playAudio<?php echo the_ID() ?>()"
+              class="border mb-2"
+              style="
+               height:180px;
+               background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);
+               background-repeat:no-repeat;
+               background-size:cover;
+               background-position:center;
+               
+               "
+              > 
+              </div>
+              <div class="border-top border-bottom"></div>
+              <h3 class="my-auto mr-auto text-white"><?php the_title(); ?>  </h3>
+      
+                <?php /*
+                <audio id="audio<?php echo the_ID() ?>"  class="d-block ml-auto audio-player" controls >
+                  <source src="<?= $file['url'] ?>" type="audio/mpeg "> 
+                </audio>
+                //*/ ?> 
+                <script>
+/*
+var audio;
+
+function createAudio(id) {
+    audio = new Audio('music/'+id+'.mp3');
+    play();
+}
+
+function play(){
+    audio.play();
+}
+
+function pause(){
+    audio.pause();
+}
+
+
+//*/
+
+
+
+                function playAudio<?php echo the_ID() ?>(){
+                  var son<?php echo the_ID() ?> = new Audio('<?= $file['url'] ?>');
+                  son<?php echo the_ID() ?>.play();
+                  }
+                </script>                
+              <span onclick="playAudio<?php echo the_ID() ?>()"><i class="fa fa-lg fa-play-circle text-white" aria-hidden="true"></i></span>
+              <?php endif; ?>
             </div>
-          </div>
+
+            <div class="py-1 mb-2 § title--centered d-flex  ">
+              <span class="my-auto ml-auto mr-2 text-white "><?= $type ?>  </span>
+              <span class="my-auto px-2 text-white border-left border-right"><?= $duration ?>  </span>
+              <span class="my-auto ml-2 mr-auto text-white"><?= $year ?>  </span>
+            </div>
+            <div class="w-100 p-1 mb-2 bg-white"></div>
+ 
+              <?php  /*
+              if ($file) :?>  
+                <audio class="d-block mx-auto audio-player" controls >
+                  <source src="<?= $file['url'] ?>" type="audio/mpeg "> 
+                </audio> 
+
+
+              <?php 
+              endif; 
+              //*/ ?>
+
+
+
+    
+            </div>
           <br>
         <?php endwhile?> 
         <?php wp_reset_postdata();?>
