@@ -6,21 +6,22 @@
  */
 get_header();
 ?> 
-<div style="height:25vh;"></div>
+  <div style="height:25vh;"></div>
 <section id=" " class="section">
   <div class="section__container">
     <div class="section__row">
       <div class="col-12 col-md-10 col-lg-9 col-xl-8">
-        <h1 class="title title--white title--centered border"><?php the_title();?></h1>
-        <p class="§ §--white pt-0 mb-4">
+        <h1 class="title title--black bg-white title--centered border"><?php the_title();?></h1>
+        <p class="§ §--white  mb-4">
           <?php
           while ( have_posts() ) :
             the_post(); the_content();
-          endwhile; 
+          endwhile;  
+          wp_reset_postdata(  );
           ?>
         </p>
         <br>
-        <?php 
+        <?php  
         $loop = new WP_Query(array(
         'post_type' => 'multimedia-graphisme',
         'posts_per_page' => '-1',
@@ -32,16 +33,73 @@ get_header();
           $loop->the_post();  
           //$link = get_field('link');
         ?> 
-          <div class="" onclick="location.href='<?php the_permalink(); ?>'" >
+        <?php 
+          if( have_rows('group_multimedia-graphisme') ): 
+            while( have_rows('group_multimedia-graphisme') ): the_row();  
+              $file = get_sub_field('image');
+              //$type = get_sub_field('type');
+              //$duration = get_sub_field('duration');
+              $year = get_sub_field('date');
+               
+           ?>
+
+            <?php endwhile; ?>
+          <?php endif ; ?>
+ 
+          <div class="my-4" >
+          <?php 
+          /*
             <div
              class="p-5" 
              style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);"
             > 
             </div>
-            <div class="py-3 border-top border-bottom title title--white title--centered">
-                <h3 class=" "><?php the_title(); ?></h3>
+            //*/ ?>
+             
+            <div class="py-3 my-2 border-top title--centered">
+
+              <?php // if ($file) : ?>  
+              <div
+              onclick="location.href='<?php the_permalink(); ?>'" 
+              class="border mb-2"
+              style="
+               height:240px;
+               background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);
+               background-repeat:no-repeat;
+               background-size:cover;
+               background-position:center;
+               
+               "
+              > 
+              </div>
+ 
+
+      
+                           
+              <?php // endif; ?>
             </div>
-          </div>
+
+
+
+            <div class="w-100 d-flex py-1 mb-2 border-top border-bottom ">
+
+              <div class="w-75 border-right "> 
+                <h3 class="my-auto mr-auto text-white"><?php the_title(); ?>  </h3>
+              </div>
+              <div class="w-25 d-flex"> 
+                <span class="m-auto §--white §"><?= $year ?>  </span>
+              </div>
+            </div>
+            
+            <div class="py-2 § §--white">
+              <?php    the_content();   ?>
+            </div>
+      
+  
+
+
+    
+            </div>
           <br>
         <?php endwhile?> 
         <?php wp_reset_postdata();?>
