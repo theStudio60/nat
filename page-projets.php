@@ -5,11 +5,7 @@
  * @package studio_soixante
  */
 get_header(); 
-
-?> 
-
-
-
+?>  
 <div style="height:25vh;"></div>
  <section id=" " class="section">
   <div class="section__container">
@@ -21,43 +17,92 @@ get_header();
         <h1 class="title title--white title--centered border"><?php the_title();?></h1>
 
  
-        <p class="§ §--white pt-0">
+        <div class="§ §--white mt-2 mb-5">
               
-        <?php
-        while ( have_posts() ) :
-          the_post(); the_content();
-        endwhile; 
-        ?>    
-        </p>
+          <?php
+          while ( have_posts() ) :
+            the_post(); the_content();
+          endwhile; 
+          wp_reset_postdata(  );
+         ?>    
+        </div> 
 
-        <div id="accordion1" class="p-2" >
-          <div class="card-header" id="heading1">
-            <h5 class="mb-0">
-              <button class="button button--fluid p-4 my-2" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                Collapsible Group Item #1
-              </button>
-            </h5>
-          </div>
-
-          <div id="collapseOne" class="collapse " aria-labelledby="heading1" data-parent="#accordion1">
-            <p class="text-white mt-1 mb-5">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-            </p>
+        <?php  
+        $loop = new WP_Query(array(
+        'post_type' => 'projet',
+        'posts_per_page' => '-1',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'offset' => 0
+        ));
+        while($loop->have_posts() ) : 
+          $loop->the_post();  
+          //$link = get_field('link');
+        ?> 
+        <?php 
+          if( have_rows('group_projet') ): 
+            while( have_rows('group_projet') ): the_row();  
+              $file = get_sub_field('image');
+              //$type = get_sub_field('type');
+              //$duration = get_sub_field('duration');
+              $description = get_sub_field('description');
+              $year = get_sub_field('date');
+           ?>
+            <?php endwhile; ?>
+          <?php endif ; ?>
+          <div class="mb-4" >
+         
+            <?php 
+            /*
+            <div
+             class="p-5" 
+             style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);"
+            > 
             </div>
+            //*/ ?>
+             
+            <div class="py-2 mt-1 title--centered">
+
+              <?php // if ($file) : ?>  
+              <div
+              onclick="location.href='<?php the_permalink(); ?>'" 
+              class="border "
+              style="
+               height:180px;
+               background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);
+               background-repeat:no-repeat;
+               background-size:cover;
+               background-position:center;
+               cursor:pointer;
+               "
+              > 
+              </div>
+              <?php // endif; ?>
+            </div>
+
+            <a href="<?php the_permalink(); ?>" class="w-100 d-flex py-3  mb-1 border-top border-bottom ">
+ 
+                <h2 class="  m-auto   §--centered §--white">
+                  <b>
+                  <?php the_title(); ?> 
+                  </b>
+                </h2>
+            </a>
+            <?php /*
+            <div class="py-2 § §--white">
+              <?= $description ; ?>
+              <?php   // the_content();   ?>
+            </div>
+
+            //*/ ?>
+            
           </div>
-        </div>
-      
-
-
-
- 
-
- 
-
-    </div>
+          <br>
+        <?php endwhile?> 
+        <?php wp_reset_postdata();?>
+      </div>
     </div>
   </div>
 </section>
-
 <?php
 get_footer(); 
