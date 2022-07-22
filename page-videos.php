@@ -36,11 +36,15 @@ get_header();
           if( have_rows('group_multimedia-videos') ): 
             while( have_rows('group_multimedia-videos') ): the_row();  
               $mp4 = get_sub_field('file');
+              $type = get_sub_field('type');
+              $duration = get_sub_field('duration');
+              $year = get_sub_field('date');
+               
            ?>
 
             <?php endwhile; ?>
           <?php endif ; ?>
-          <div class="" onclick="location.href='<?php /* the_permalink();  //*/ ?>'" >
+          <div class="my-4" >
           <?php 
           /*
             <div
@@ -49,24 +53,44 @@ get_header();
             > 
             </div>
             //*/ ?>
-            <div class="py-2 mb-3 border-top border-bottom  title--centered">
-                <h3 class="my-auto  text-white"><?php the_title(); ?></h3>
+            <div class="mt-3 w-100 p-1 bg-white"></div>
+            <div class="py-3 mb-2 border-bottom  title--centered">
+              <h3 class="my-auto text-white"><?php the_title(); ?>  </h3>
             </div>
+            <div class="py-1 mb-2 § title--centered d-flex  ">
+              <span class="my-auto ml-auto mr-2 text-white "><?= $type ?>  </span>
+              <span class="my-auto px-2 text-white border-left border-right"><?= $duration ?>  </span>
+              <span class="my-auto ml-2 mr-auto text-white"><?= $year ?>  </span>
+            </div>
+            <div class="w-100 p-1 mb-2 bg-white"></div>
+            
+          <?php  if ($mp4) :?> 
+            <video  class="d-none d-xl-block" width="708" height="auto" controls>
+              <source src="<?= $mp4['url'] ?>" type="video/mp4"> 
+            </video> 
 
 
-<?php if ($mp4) :?>
-<? ?>
-<? ?>
+            <video class="d-none d-lg-block d-xl-none" width="664" height="auto" controls>
+              <source src="<?= $mp4['url'] ?>" type="video/mp4"> 
+            </video> 
 
-<video width="708" height="auto" controls>
-  <source src="<?= $mp4['url'] ?>" type="video/mp4"> 
-</video>
+            <script>
+
+              </script>
+            <video class="d-none d-md-block d-lg-none" width="543" height="auto" controls>
+              <source src="<?= $mp4['url'] ?>" type="video/mp4"> 
+            </video> 
+
+            <video class="d-none d-sm-block d-md-none" width="478" height="auto" controls>
+              <source src="<?= $mp4['url'] ?>" type="video/mp4"> 
+            </video> 
+
+            <video class="d-block d-sm-none mx-auto" width="288" height="auto" onclick="location.href='<?php the_permalink(); ?>'"  >
+              <source src="<?= $mp4['url'] ?>" type="video/mp4"> 
+            </video> 
 
 
-<video class="w-100" src="" loop playsinline muted></video>
-
-<? ?>
-<?php endif; ?>
+          <?php endif; ?>
 
 
 
