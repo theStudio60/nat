@@ -139,16 +139,19 @@ style=" "
 					<div class="mt-auto mb-0 p-4">
 						<div class="w-100 d-flex justify-content-around">
 
-							<button class="button--sucre">
+							<button id="more" class="button--sucre">
         	      <span>
-        	     	+ Sucre
+								<i class="fa far fa-plus fa-lg" aria-hidden="true"></i>
 
+        	     	 Sucre
         	      </span>
         	    </button>
-        	    <button class="button--sel">
-        	      <span>
-        	      - Sel
 
+							<button id="less" class="button--sel">
+        	      <span>
+								<i class="fa far fa-minus fa-lg" aria-hidden="true"></i>
+
+        	     	 Sel
         	      </span>
         	    </button>
 						</div>

@@ -9,35 +9,12 @@ get_header();
 while ( have_posts() ) :
   the_post(); the_content();
 endwhile;
-
 get_template_part("partials/sections/front-page/homepage","atf");
- 
 get_template_part("partials/sections/front-page/homepage","news");
 get_template_part("partials/sections/front-page/homepage","recent");
 get_template_part("partials/sections/front-page/homepage","selection");
 get_template_part("partials/sections/front-page/homepage","bottom");
-/*
-if( have_rows('homepage_acf_group') ): 
-  while( have_rows('homepage_acf_group') ): the_row(); 
-    get_template_part("partials/hero");
-    get_template_part("partials/sections/about"); 
- 
-    get_template_part("partials/sections/contact"); 
-
-  endwhile;
-endif;
-//*/
-?> 
- 
-
-
-
-
-
-
-
-
-
+?>
 <?php
 get_footer();
 

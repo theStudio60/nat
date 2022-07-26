@@ -133,10 +133,8 @@ get_header();
       </div>
       <?php
       while($loopM->have_posts() ) : ?>
-
         <?php
-          $loopM->the_post();  
-          //$link = get_field('link');
+          $loopM->the_post();   
         ?> 
           <div class="py-2 border-top" onclick="location.href='<?php the_permalink(); ?>'" >
             <div

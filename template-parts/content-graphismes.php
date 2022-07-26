@@ -21,18 +21,19 @@ style=" "
 >
 <?php
 if( have_rows('group_multimedia-graphisme') ): 
-                   while( have_rows('group_multimedia-graphisme') ): the_row();  
+  while( have_rows('group_multimedia-graphisme') ): the_row();  
                      $file = get_sub_field('image');
                      //$type = get_sub_field('type');
                      //$duration = get_sub_field('duration');
                      $year = get_sub_field('date');
                       
                   ?>
-                   <?php endwhile; ?>
-                 <?php endif ; 
+                  <img src="<?php echo $file[url] ?>" alt="">
+   <?php endwhile; ?>
+<?php endif ; 
                  ?>
-       <img src="<?php echo $file[url] ?>" alt="">
-<?= $date ?>
+       <img src="<?php // echo $file[url] ?>" alt="">
+<?= $year ?>
 
  	<?php the_content(); ?>
 

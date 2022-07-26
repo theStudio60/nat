@@ -30,7 +30,7 @@ get_header();
         <br>
         <?php  
         $loop = new WP_Query(array(
-        'post_type' => 'multimedia-graphisme',
+        'post_type' => 'graphismes',
         'posts_per_page' => '-1',
         'orderby' => 'date',
         'order' => 'DESC',

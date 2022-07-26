@@ -14,13 +14,20 @@ get_header();
     <div class="section__row">
 
       <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+        <div 
+         class="py-3 text-white" style="cursor:pointer"
+         onclick="location.href='<?php echo site_url(); ?>/multimedias/graphismes/'" 
+        >
+          <span class="text-white fa far fa-arrow-left fa-lg my-3 "></span>
+          <span class="ml-2 text-white">retour vers la page graphisme</span>
+        </div>
         <h1 class="title title--white title--centered border"><?php the_title();?></h1>
               <?php
               /* Start the Loop */
 
                while ( have_posts() ) :
                  the_post();
-                 get_template_part( 'template-parts/content-graphisme', get_post_type() );
+                 get_template_part( 'template-parts/content-graphismes', get_post_type() );
                endwhile;
               ?>
       </div>
