@@ -11,6 +11,13 @@ get_header();
   <div class="section__container">
     <div class="section__row">
       <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+        <div 
+         class="py-3 text-white" style="cursor:pointer"
+         onclick="location.href='<?php echo site_url(); ?>/multimedias'" 
+        >
+          <span class="text-white fa far fa-arrow-left fa-lg my-3 "></span>
+          <span class="ml-2 text-white">retour vers la page multimédias</span>
+        </div>
         <h1 class="title title--black bg-white title--centered border"><?php the_title();?></h1>
         <p class="§ §--white  mb-4">
           <?php

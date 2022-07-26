@@ -7,6 +7,11 @@
         margin: 0;
     }
     
+    .gfield_label {
+        color: $white;
+        font-family: $font-family-sans-serif;
+    }
+    
     .gf_left_half:first-child()+.gf_right_half {
         margin-top: 0;
     }
@@ -27,15 +32,26 @@
         border-top: none;
         border-left: hidden;
         border-right: hidden;
-        border-bottom: solid 0.05rem $white;
+        border: solid 1px $white;
         border-radius: 0;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 1);
         color: $white;
-        font-family: $font-family-§;
+        font-size: 16px;
+        font-family: $font-family-sans-serif;
+        padding: 16px;
         &:hover,
         &:focus {
-            border-top: none;
+            //  border: none;
         }
+    }
+    
+    .charleft.ginput_counter,
+    .ginput_complex.ginput_container span label {
+        color: $white;
+        font-family: $font-family-sans-serif;
+        font-size: 8px;
+        margin-top: 0;
+        padding-top: 0;
     }
     
     .gform_footer {
@@ -64,7 +80,7 @@
         font-family: $font-weight-base;
         &:hover,
         &:focus {
-            border-top: none;
+            //   border: none;
         }
     }
     
@@ -72,7 +88,7 @@
         @extend .w-100;
         input,
         textarea {
-            border: 0.04rem solid $gray-300;
+            border: 1px solid $white;
             @media only screen and (min-width: 200px) and (max-width: 768px) {
                 max-width: 90vw;
             }
@@ -89,7 +105,9 @@
     }
     
     .gform_wrapper {
-        @extend .my-auto;
+        @extend .my-2;
+        @extend .py-2;
+        border-top: 1px solid #fff;
     }
     
     @media only screen and (min-width: 200px) and (max-width: 768px) {

@@ -26,10 +26,18 @@ endif;
     <div class="section__row">
 
     <div class="col-12 col-md-10 col-lg-9 col-xl-8">
-        <h1 class="title title--white title--centered border"><?php the_title();?></h1>
-    
+      <div 
+      class="py-3 text-white" style="cursor:pointer"
+      onclick="location.href='<?php echo site_url(); ?>/textes'" 
+      >
+        <span class="text-white fa far fa-arrow-left fa-lg my-3 "></span>
+        <span class="ml-2 text-white">retour vers la liste de textes</span>
+      </div>
+      
+      <h1 class="title title--white title--centered border"><?php the_title();?></h1>
 
         <?php 
+        	// echo get_the_term_list( get_the_ID(), 'ecommerce_tag', '', ',' );
 /*
 if( $tags ): ?>
     <ul>
@@ -44,6 +52,9 @@ if( $tags ): ?>
 <?php endif; 
 //*/
 ?>
+        <style>
+          p,a,h1,h2,h3,h4,h5,h6{color:#fff!important;}
+        </style>
            
               <?php
               /* Start the Loop */
@@ -52,7 +63,7 @@ if( $tags ): ?>
                  the_post();
                  get_template_part( 'template-parts/content-texte', get_post_type() );
                endwhile;
-             
+               wp_link_pages();
               ?>
                 </div>
          </div>

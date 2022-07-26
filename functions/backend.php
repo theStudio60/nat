@@ -193,9 +193,9 @@ function remove_menus(){
   // Remove Posts -> New post
   remove_submenu_page( 'edit.php', 'post-new.php' );
   // Remove Posts -> Categories
-  remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' );
+  // remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' );
   // Remove Posts -> Tags
-  remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' );
+ // remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' );
   // Remove Media
   //remove_menu_page( 'upload.php' );
   // Remove Media -> Library

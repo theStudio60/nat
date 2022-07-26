@@ -28,15 +28,39 @@ if ( has_post_thumbnail() ) {
   <div class="section__container">
     <div class="section__row">
       <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+        <span 
+        class="text-white fa far fa-arrow-left fa-lg my-3 "
+        onclick="location.href='<?php echo site_url(); ?>/actualite'" 
+        ></span>
         <h1 class="title title--white title--centered border"><?php the_title();?></h1>
-        <div class="§ §--white  my-4 py-3 border-top border-bottom">
-        <?php 
+        <div
+            
+              class="border mb-2"
+              style="
+               height:240px;
+               background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);
+               background-repeat:no-repeat;
+               background-size:cover;
+               background-position:center;
+               
+               "
+              > 
+              </div>
+        <div class="§ §--white text-white my-4 py-3 border-top border-bottom"
+        
+        >
+        <style>
+          p,a,h1,h2,h3,h4,h5,h6{color:#fff!important;}
+        </style>
+          <?php 
   
           /* Start the Loop */
           while ( have_posts() ) :
 
             the_post(); the_content();
+     
           endwhile;
+          wp_link_pages();
         ?>
         </div>
       </div>

@@ -11,14 +11,22 @@ get_header();
   <div class="section__container">
     <div class="section__row">
       <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+      <div 
+       class="py-3 text-white" style="cursor:pointer"
+       onclick="location.href='<?php echo site_url(); ?>/multimedias'" 
+      >
+        <span class="text-white fa far fa-arrow-left fa-lg my-3 "></span>
+        <span class="ml-2 text-white">retour vers la page multimédias</span>
+      </div>
+      
         <h1 class="title title--black bg-white title--centered border"><?php the_title();?></h1>
-        <p class="§ §--white  mb-4">
+        <div class="§ §--white  mb-4">
           <?php
           while ( have_posts() ) :
             the_post(); the_content();
           endwhile;  
           ?>
-        </p>
+        </div>
         <br>
         <?php  
         $loop = new WP_Query(array(
@@ -58,7 +66,7 @@ get_header();
 
             <?php  if ($file) : ?>  
               <div
-              onclick="playAudio<?php echo the_ID() ?>()"
+              
               class="border mb-2"
               style="
                height:180px;
@@ -71,41 +79,13 @@ get_header();
               > 
               </div>
               <div class="border-top border-bottom"></div>
-              <h3 class="my-auto mr-auto text-white"><?php the_title(); ?>  </h3>
-      
-                <?php /*
-                <audio id="audio<?php echo the_ID() ?>"  class="d-block ml-auto audio-player" controls >
+              <h3 class="my-2 mr-auto text-white"><?php the_title(); ?>  </h3>
+
+              <audio id="audio<?php echo the_ID() ?>"  class="d-block mx-auto my-2 audio-player" controls >
                   <source src="<?= $file['url'] ?>" type="audio/mpeg "> 
-                </audio>
-                //*/ ?> 
-                <script>
-/*
-var audio;
-
-function createAudio(id) {
-    audio = new Audio('music/'+id+'.mp3');
-    play();
-}
-
-function play(){
-    audio.play();
-}
-
-function pause(){
-    audio.pause();
-}
-
-
-//*/
-
-
-
-                function playAudio<?php echo the_ID() ?>(){
-                  var son<?php echo the_ID() ?> = new Audio('<?= $file['url'] ?>');
-                  son<?php echo the_ID() ?>.play();
-                  }
-                </script>                
-              <span onclick="playAudio<?php echo the_ID() ?>()"><i class="fa fa-lg fa-play-circle text-white" aria-hidden="true"></i></span>
+              </audio>
+              
+              
               <?php endif; ?>
             </div>
 
