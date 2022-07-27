@@ -99,15 +99,30 @@
         display: none!important;
     }
     
-    .gform_button {
-        @extend .button;
-        margin: 0 !important;
+    .gform_button.button {
+        @extend .p-2,
+        .mt-auto,
+        .mb-0;
+        font-size: 18px!important;
+        font-family: $font-family-sans-serif;
+    }
+    
+    #gform_submit_button_2.gform_button.button {
+        background: $pink!important;
+        color: $black;
+        border: none;
+        width: 100%!important;
+    }
+    
+    #gform_submit_button_3.gform_button.button {
+        background: $green!important;
     }
     
     .gform_wrapper {
-        @extend .my-2;
-        @extend .py-2;
+        @extend .my-auto;
+        @extend .py-4;
         border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
     }
     
     @media only screen and (min-width: 200px) and (max-width: 768px) {

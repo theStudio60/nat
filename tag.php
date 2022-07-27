@@ -12,23 +12,37 @@ get_header();
 ?>
 <div style="height:25vh;"></div>
 <section 
-style=" <?php  if ($thisTag == "tags" ):  echo "min-height:70vh!important;"; endif;?>"
-class=" section <?php // if ($thisTag == "tags" ):  echo "section h-100"; endif;?>">
+style=" <?php  if ($thisTag == "tags" ):  echo "min-height:30vh!important;"; endif;?>"
+class=" section <?php // if ($thisTag == "tags" ):  echo "section h-100"; endif;?>"
+>
   <div class="section__container">
     <div class="section__row">
-
-    <div class="col-12 col-md-10 col-lg-9 col-xl-8">
-        <h3 class="border title title--white text-dark " >Tags</h3>
+      <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+        <h3 class="border title title--white title--centered " >Tags</h3>
+        <ul class="mx-0 px-0 d-flex w-100 § §--white text-white" style="a{color:#fff;}">
+              <?php
+              $tags = get_tags();
+              if ( $tags ) :
+                  foreach ( $tags as $tag ) : ?>
+                      <li class="mx-1"><a style="color:#fff!important;"  href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" title="<?php echo esc_attr( $tag->name ); ?>"><?php echo esc_html( $tag->name ); ?>,</a></li>
+                  <?php endforeach; ?>
+              <?php endif; ?>
+          </ul>
         <?php 
-        
+        /*
         $args = array(
+          
           'smallest' => 15,
           'largest' => 40,
           'format' => 'flat',
           'unit' => 'px',
           'separator' => ' ',
           'exclude' => '20');
+
+
           wp_tag_cloud($args);
+        //*/
+        
         ?> 
         <hr>
         <?php
@@ -37,63 +51,51 @@ class=" section <?php // if ($thisTag == "tags" ):  echo "section h-100"; endif;
         <?php 
         else :
         ?>
-          <h3 class="mt-5 p-2 text-secondary ">
+          <h3 class="mt-5 border-top p-2 text-white">
             <b> 
             Liste des articles contenant le tag "<?= $thisTag ?>" : 
             </b>
           </h3>
-          
-        <?php endif ; ?>
+          <?php 
+              $uu_id=get_current_user_id();
+              $args = array(
+                  'posts_per_page'   => -1,
+                  'tag' => $thisTag ,
+                  'post_type'        => array('post','oeuvres','projet','texte'),
+                  'post_status'      => 'publish'
+              );
 
-        <?php $the_query= new WP_Query( 'tag='.$thisTag );
-        
-        if ( $the_query -> have_posts() ){
-          
-          echo '<ul class="ms-0 mt-5 p-0 ">';
-          
-          while ( $the_query->have_posts() ){
-            $the_query->the_post();
-            ?>
-            <div class="row my-5 p-0">  
-              <div
-							class="col-12 <?php /*col-md-9 //*/ ?> col-lg-6 d-flex"
-							onclick="location.href='<?php the_permalink(); ?>'"
-							> 
-								<div class="theme-latest-post-h__thumbnail d-flex" style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>)" >		
- 
-								</div>
-							</div>
-							<div class="col-12 col-lg-6 my-auto">
-                <a href="<?php the_permalink(); ?>" class="text-dark">
-                   <h1 onclick="location.href='<?php the_permalink(); ?>'"  class="text-dark   recent-post__title"><?php the_title(); ?></h1>
-                </a>
-                <div class="latest-post__cat_and_tags"> 
-                  <?php echo $theme->name; ?> 
-                  <span class="latest-post__cat_and_tags__cat"><?php echo the_category( ); ?>	 </span>	
-								 
-									 
-								</div>
-                <?php		
-                $this_excerpt = get_the_excerpt(  );
-                $this_excerpt_result =  wp_trim_words( $this_excerpt, 40, ' ...  '); 
-                ?>
-                <div onclick="location.href='<?php the_permalink(); ?>'" class="post__excerpt"><?= $this_excerpt_result ?></div>
-                <br>
-                <div class="d-flex">
-									<span class="latest-post__author"><?php the_author(); ?></span>
-									<span class="my-auto mx-1 "> . </span>
-                  <span class="latest-post__date">  <?php echo get_the_date(); ?></span>
-								</div>
-              </div>
-            </div>
-            <hr>
-              <?php
-            }
-            echo '</ul>';
-          } else {
-            echo "";
-          }
-          ?>
+              $posts_array = get_posts( $args );
+              echo '<ul class="ml-0 mt-2 p-0 ">';
+              foreach ( $posts_array as $post ) : setup_postdata( $post );
+                 $url = $post->guid;
+                  //echo"<li><a href='".$url."'>" .$post->post_title."</a></li>";
+                  ?>
+                  <div class="row m-0 p-0">  
+                    <?php /*
+                    <div
+						      	class="col-12 col-lg-6 d-flex"
+						      	onclick="location.href='<?= $url ?>'"
+						      	> 
+						      		<div class=" " style="background-image:url(<?php echo $post->post_thumnail ?>)" >		
+
+						      		</div>
+						      	</div>
+                    //*/ ?>
+						      	<div class="col-12 col-lg-6 my-4 border">
+                      <a href="<?php the_permalink(); ?>" class="py-2">
+                         <span onclick="location.href='<?php the_permalink(); ?>'"  class="w-100 § §--white"><?php the_title(); ?></span>
+                      </a>
+
+
+                    </div>
+                  </div>
+                  <?php
+              endforeach; 
+              echo '</ul>';
+              wp_reset_postdata();
+              ?>
+            <?php endif ; ?>
           </div>
         </div>
       </div> 

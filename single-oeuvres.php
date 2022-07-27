@@ -18,20 +18,12 @@ get_header();
       while ( have_posts() ) : the_post();
         get_template_part( 'template-parts/content-oeuvre', get_post_type() );
        ?>
-        <div class="col-12 col-lg-8 border p-4 m-4">
-          <?php the_content(); ?>
-        </div>
-
+ 
       <?php endwhile; ?>
-      <div class="col-12 col-lg-8 my-2">
-        <span 
-        class="text-white fa far fa-arrow-left fa-lg my-3 "
-        onclick="location.href='<?php echo site_url(); ?>/oeuvres'" 
-        ></span>
-      </div>
+      
     </div>
 
   </div> 
 </section>
 <?php
-get_footer();  
+// get_footer();  

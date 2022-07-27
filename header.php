@@ -112,7 +112,9 @@ document.addEventListener("mousemove", function(event) {
  <div class="cursor" id="cursor">
   <div class="circle" id="circle"></div>
   </div>
-  <?php if( have_rows('website_settings', 'option') ): ?>
+  <?php 
+  /*
+  if( have_rows('website_settings', 'option') ): ?>
     <?php while( have_rows('website_settings', 'option') ): the_row(); ?>
       <?php if( have_rows('popup_alert') ): ?>
         <?php while( have_rows('popup_alert') ): the_row(); ?>
@@ -122,7 +124,10 @@ document.addEventListener("mousemove", function(event) {
         <?php endwhile; ?>
       <?php endif; ?>
     <?php endwhile; ?>
-  <?php endif; ?>
+  <?php endif; 
+  //*/
+  
+  ?>
  
   <?php 
 //get_template_part("partials/header/navbar-desktop"); 

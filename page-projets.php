@@ -102,33 +102,6 @@ get_header();
         <?php endwhile?> 
         <?php wp_reset_postdata();?>
       </div>
-      <div class="col-12 col-md-10 col-lg-3 col-xl-4">
-        <div class="m-0 p-0 d-flex flex-column">
-          <div class="mt-0 mb-3 p-2 text-white border w-100 d-flex ">
-            <h3 class="m-auto text-white"> 
-            Rechercher
-            </h3>
-          </div>
-          <div class="mb-3 p-2 text-white border-bottom § §--white w-100 d-flex ">
-          <?php  
-        
-          $args = array(
-            'post_type' => 'projet',
-            
-          'smallest' => 15,
-          'largest' => 40,
-          'format' => 'flat',
-          'unit' => 'px',
-          'separator' => ', ',
-          'exclude' => '20');
-          wp_tag_cloud($args);
-
- 
-
-        ?>  
-        </div>
-      </div>
-
     </div>
   </div>
 </section>

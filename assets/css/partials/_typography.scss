@@ -194,10 +194,13 @@ a:hover {
     font-family: $font-family-sans-serif;
 }
 
+.tag-cloud-link,
 .tag-post {
     font-family: $font-family-sans-serif;
     font-size: 16px;
-    color: $primary
+    color: $white;
+    text-decoration: underline;
+    margin-left: $spacer;
 }
 
 .tag-large {
