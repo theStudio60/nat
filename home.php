@@ -118,15 +118,15 @@ if ( has_post_thumbnail() ) {
               </div>
             </form> 
           </div> 
-          <div class="list group mb-3 p-2 text-white border-bottom § §--white w-100 d-flex ">
+          <div class=" p-2 text-white border-bottom">
           <?php  
         
         
                
               $args = array(
          
-                'smallest' => 16,
-                'largest' => 32,
+                'smallest' => 24,
+                'largest' => 36,
                 'format' => 'flat',
                 'unit' => 'px',
                 'separator' => ' ',
