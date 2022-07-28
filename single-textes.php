@@ -35,23 +35,8 @@ endif;
       </div>
       
       <h1 class="title title--white title--centered border"><?php the_title();?></h1>
+      <?php the_tags('<span class="text-white py-3 mb-3">' . '</span>'); ?>
 
-        <?php 
-        	// echo get_the_term_list( get_the_ID(), 'ecommerce_tag', '', ',' );
-/*
-if( $tags ): ?>
-    <ul>
-    <?php foreach( $tags as $tag ): ?>
-        <li>
-            <h2><?php echo esc_html( $tag->name ); ?></h2>
-            <p><?php echo esc_html( $tag->description ); ?></p>
-            <a href="<?php echo esc_url( get_term_link( $tag ) ); ?>">View all '<?php echo esc_html( $tag->name ); ?>' posts</a>
-        </li>
-    <?php endforeach; ?>
-    </ul>
-<?php endif; 
-//*/
-?>
         <style>
           p,h1,h2,h3,h4,h5,h6{color:#fff!important;}
         </style>
