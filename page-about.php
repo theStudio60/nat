@@ -6,103 +6,75 @@
  */
 get_header(); 
 ?> 
- 
-
-
- <div style="height:25vh;"></div>
- <section id=" " class="section">
+<div style="height:25vh;"></div>
+<section id=" " class="section">
   <div class="section__container">
     <div class="section__row">
-
       <div class="col-12 col-md-10 col-lg-9 col-xl-8">
-     
-  
-            <h1 class="title title--white title--centered border"><?php bloginfo("name");?></h1>
-
- 
-            <p class="§ §--white pt-0">
-              
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam et veniam expedita, at esse magnam perferendis nemo asperiores aliquid sequi quisquam id sapiente distinctio ab? Optio porro debitis placeat saepe!
-          </p>
-   <?php
-   while ( have_posts() ) :
-    the_post(); the_content();
-  endwhile;
-   
-   ?>
-    
-      </div>
-
-
-    </div>
-  </div>
-</section>
-
-<section id=" " class="section">
-  <div class="container-fluid p-5">
-    <div class="section__row">
-
-      
-      <div class="col-12 col-lg-6 order-2 order-lg-1 my-5 my-lg-auto ">
-     
-  
-        <picture> 
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80"
-          class="img-fluid img- " alt="...">
-        </picture>
-
- 
-      </div>
-
-      <div class="col-12 col-lg-6 order-1 order-lg-2  my-5 my-lg-auto">
-  
-
-        <h1 class="title title--white title--centered border">À propos</h1>
-
-        <p class="§ §--white pt-0 border--bottom py-2 ">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam et veniam expedita, at esse magnam perferendis nemo asperiores aliquid sequi quisquam id sapiente distinctio ab? Optio porro debitis placeat saepe!
+        <h1 class="title title--white title--centered border"><?php bloginfo("name");?></h1>
+        <p class="§ §--white pt-0">
+          <?php
+          while ( have_posts() ) :
+            the_post(); the_content();
+          endwhile;
+          ?>    
         </p>
-        <p class="§ §--white pt-0 border--bottom py-2 ">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam et veniam expedita, at esse magnam perferendis nemo asperiores aliquid sequi quisquam id sapiente distinctio ab? Optio porro debitis placeat saepe!
-        </p>
-        <p class="§ §--white pt-0 border--bottom py-2 ">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam et veniam expedita, at esse magnam perferendis nemo asperiores aliquid sequi quisquam id sapiente distinctio ab? Optio porro debitis placeat saepe!
-        </p>
-      </div>
-
-
-
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-<section id=" " class="section">
-  <div class="container-fluid p-5">
-    <div class="row">
-      <div class="col-12">
-        <h1 class="title title--white title--centered border">CV</h1>
-  
-        <picture> 
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80"
-           class="img-fluid border " alt="CV">
-        </picture>
-
-        <button class="button button--fluid my-2">
-              Télécharger
-            </button> 
       </div>
     </div>
   </div>
 </section>
+<?php if( have_rows('group_about-page') ): ?>
+  <?php while( have_rows('group_about-page') ): the_row();?>
+    <?php if( have_rows('group_about') ): ?>
+      <?php while( have_rows('group_about') ): the_row();?> 
+        <?php $wysiwyg = get_sub_field('wysiwyg'); ?>
+        <?php $thisImage = get_sub_field('image'); ?>
+        <section id=" " class="section">
+          <div class="container-fluid p-5">
+            <div class="section__row">
+              <div class="col-12 col-lg-6 order-2 order-lg-1 my-5 my-lg-auto ">
+                <picture> 
+                  <img src="<?= $thisImage['url'] ?> "
+                  class="img-fluid border" alt=" <?=$thisImage['title'] ?>">
+                </picture>
+              </div>
+              <div class="col-12 col-lg-6 order-1 order-lg-2  my-5 my-lg-auto">
+                <h1 class="title title--white title--centered border"><?= the_sub_field('title') ?></h1>
+                <div class="§ §--white pt-0 border--bottom py-2 ">
+                  <?= $wysiwyg ?>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      <?php endwhile; ?>
+    <?php endif; ?>
+    <?php if( have_rows('group_cv') ): ?>
+      <?php while( have_rows('group_cv') ): the_row();  ?>
+        <?php //$title = get_sub_field('title'); ?>
+        <?php $wysiwyg = get_sub_field('wysiwyg'); ?>
+        <?php $thisImage = get_sub_field('image'); ?>
+        <?php $link_download = get_sub_field('link_download'); ?>
+        <section id=" " class="section">
+          <div class="container-fluid p-5">
+            <div class="section__row">
+              <h1 class="title title--white title--centered border"><?= the_sub_field('title') ?></h1>
+              <div class="col-12 my-5 py-3 my-lg-auto border-top">
+                <picture class=""> 
+                  <img src="<?= $thisImage['url'] ?> "
+                  class="img-fluid border" alt="<?=$thisImage['title'] ?>">
+                </picture>
 
+                <button onclick="location.href='<?= $thisImage['url'] ?>'" download="<?= $thisImage['title'] ?>"  class="button button--fluid my-2">
+                      <?= $link_download ?>
+                </button> 
+              </div>
+            </div>
+          </div>
+        </section>
+      <?php endwhile; ?>
+    <?php endif; ?>
+  <?php endwhile; ?>
+<?php endif; ?>
+<?php get_footer();
 
-
-<?php
-get_footer();
- 
