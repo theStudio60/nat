@@ -61,7 +61,7 @@ class=" section <?php // if ($thisTag == "tags" ):  echo "section h-100"; endif;
               $args = array(
                   'posts_per_page'   => -1,
                   'tag' => $thisTag ,
-                  'post_type'        => array('post','oeuvres','projet','texte'),
+                  'post_type'        => array('post','oeuvres','projet','textes'),
                   'post_status'      => 'publish'
               );
 
