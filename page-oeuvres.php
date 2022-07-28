@@ -20,7 +20,10 @@ get_header();
             the_post(); the_content();
           endwhile;
           wp_reset_postdata(  );
-          
+          ?>
+        </div>
+
+          <?php
           $loopT = new WP_Query(array(
             'post_type' => 'oeuvres',
             'posts_per_page' => '-1',
@@ -32,10 +35,12 @@ get_header();
         while($loopT->have_posts() ) : 
           $loopT->the_post();  
           ?>
+        <div class="§ §--white my-2 py-2 ">
          
           
           <?php the_tags('<span class="p-2 text-white § §--white">'.'</span>');?>
     
+          </div>
      
         <?php
         endwhile;
@@ -43,9 +48,8 @@ get_header();
     
           ?>     
         </div>
-      </div>
 
-      <div class="col-12   my-3">
+      <div class="col-12 ">
 
  
 
@@ -87,7 +91,7 @@ get_header();
 
         ?> 
         
-          <a href="<?php the_permalink(); ?>" class="col-12 col-lg-4 my-3">
+          <a href="<?php the_permalink(); ?>" class="col-12 col-lg-4 ">
             <div
             class="image-wrapper border"
             style="background:url(<?php echo get_the_post_thumbnail_url(); ?>)";
