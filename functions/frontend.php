@@ -65,18 +65,21 @@ add_action('wp_enqueue_scripts', function () {
     wp_register_script('vendor', THEME_URI.'/js/vendor/vendor.min.js', ['jquery3'], null, true);
     wp_enqueue_script('vendor');
     //*/
+    wp_register_script('popper', THEME_URI.'/js/vendor/popper.min.js', ['jquery3'], null, true);
+    wp_enqueue_script('popper');
+    
     wp_register_script('bootstrap', THEME_URI.'/js/vendor/bootstrap.min.js', ['jquery3'], null, true);
     wp_enqueue_script('bootstrap');
 
-    wp_register_script('popper', THEME_URI.'/js/vendor/popper.min.js', ['jquery3'], null, true);
-    wp_enqueue_script('popper');
+
 /*
     wp_register_script('aos', THEME_URI.'/js/vendor/aos.js', ['jquery3'], null, true);
     wp_enqueue_script('aos');
     //*/
- 
+ /*
     wp_enqueue_script('slick', THEME_URI.'/js/vendor/slick.min.js',['jquery3']);
     wp_enqueue_script('slick');
+   //*/
     wp_register_script('scripts', THEME_URI.'/js/custom/main.js', ['jquery3'/*,'vendor'*/,'popper','bootstrap','slick'], null, true);
     wp_enqueue_script('scripts');
 /*
@@ -99,7 +102,7 @@ add_action('wp_enqueue_scripts', function () {
 function login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png);
+            background-color: #000;
             height:165px; 
             background-size: 100%;
             background-repeat: no-repeat;
