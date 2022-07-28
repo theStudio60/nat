@@ -1,5 +1,7 @@
 .header {
-    @extend .fixed-top;
+    @extend .fixed-top,
+    .p-0,
+    .m-0;
     @mixin transition {
         @for $i from 1 through 50 {
             &:nth-child(#{$i}) {
@@ -7,7 +9,7 @@
             }
         }
     }
-    max-height: 80px;
+    //max-height: 80px;
     &__container {
         @extend .container-fluid,
         .p-0;
@@ -34,15 +36,21 @@
 
 .burger-header {
     height: 64px;
+    @extend .d-flex,
+    .mb-2;
+    margin-left: $spacer*5;
     background-color: $white;
+    h3 {
+        @extend .my-auto,
+        .ml-4,
+        .text-dark
+    }
 }
 
 .burger-menu {
-    // border: 1px solid $white;
-    //padding: 16px;
     position: fixed;
     top: 0px;
-    left: 0;
+    //left: 0;
     //top: -24px;
     height: calc(100vh);
     width: 100vw;
@@ -52,21 +60,27 @@
     -ms-transform: translatex(-100vw);
     box-sizing: border-box;
     //pointer-events: none;
-    padding-top: 32px;
+    //padding-top: 32px;
     transition: width 475ms ease-out, transform 450ms ease, border-radius .8s .1s ease;
     border-bottom-left-radius: 100vw;
     background: rgba( $black, 1);
     .main-menu {
         ul {
-            height: 100%;
+            @extend .d-flex,
+            .align-content-around,
+            .flex-wrap,
+            .w-100,
+            .p-2;
+            //*
+            height: calc(100vh - 64px)!important;
             width: 100%;
-            margin: 0;
-            padding: 0;
             overflow: auto;
-            overflow-x: hidden;
+            overflow-y: scroll;
             pointer-events: auto;
+            //*/
         }
         li {
+            width: 100%;
             list-style: none;
             text-transform: uppercase;
             pointer-events: auto;
@@ -75,20 +89,22 @@
             transform: translatex(100vw);
             /* ie workaround */
             -ms-transform: translatex(-100vw);
+            //border-top: 1px solid $white;
+            //border-bottom: 1px solid $white;
+            /*
             &:last-child {
                 margin-bottom: 2em;
             }
+            //*/
             a {
                 text-decoration: none;
                 color: $white;
                 text-align: center;
                 display: block;
-                padding: 1rem;
-                font-size: calc(48px - .5vw);
+                //padding: 1rem;
+                font-size: calc(36px - .5vw);
                 font-family: $font-family-serif;
                 font-weight: 700;
-                border-top: 1px solid $white;
-                border-bottom: 1px solid $white;
                 &:hover {
                     cursor: pointer;
                 }
@@ -131,7 +147,7 @@ input.burger {
 
 label.burger {
     //background-color: rgba($black, 1);
-    @extend .my-1;
+    //@extend .my-1;
     top: $spacer*2;
     left: $spacer*2;
     z-index: 9999;

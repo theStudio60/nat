@@ -108,96 +108,36 @@ document.addEventListener("mousemove", function(event) {
 
 
 <body class="page-wrapper">
-  <?php wp_body_open(); ?>
- <div class="cursor" id="cursor">
-  <div class="circle" id="circle"></div>
-  </div>
-  <?php 
-  /*
-  if( have_rows('website_settings', 'option') ): ?>
-    <?php while( have_rows('website_settings', 'option') ): the_row(); ?>
-      <?php if( have_rows('popup_alert') ): ?>
-        <?php while( have_rows('popup_alert') ): the_row(); ?>
-          <?php if ( 'oui' == get_sub_field('alert_condition') ): ?>
-            <?php get_template_part('partials/popup'); ?>
-          <?php endif; ?>
-        <?php endwhile; ?>
-      <?php endif; ?>
-    <?php endwhile; ?>
-  <?php endif; 
-  //*/
-  
-  ?>
- 
-  <?php 
-//get_template_part("partials/header/navbar-desktop"); 
-//get_template_part("partials/header/navbar-mobile"); 
-  ?>
-
-
-
+  <?php wp_body_open(); ?> 
   <header id="masthead" class="header">
     <div class="header__container"> 
-      <div class="d-flex p-2 bg-black w-100 h-100"> 
-         
-      
+      <div class="d-flex bg-black w-100 h-100"> 
         <input id="burger" class="burger " type="checkbox"/>
         <label class="burger burger--default" for="burger">
           <i></i>
- 
         </label>
-
         <div class="burger-menu h-100 border ">
-
-
-
-        <div class="p-2 border">
-        <div class="burger-header">
-
-            <h3 class="text-black">MENU</h3>
-        </div>
-        <div class="main-menu my-auto border m-2">
-          <?php
-          wp_nav_menu( array(
-          'theme_location'  => 'header-menu',
-          'depth'           => 1, // 1 = no dropdowns, 2 = with dropdowns.
-          'container'       => 'div',
-          'container_class' => 'd-block border p-2 m-2 ',
-          'container_id'    => ' ',
-          'menu_class'      => 'd-flex flex-column',
-          'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-          'walker'          => new WP_Bootstrap_Navwalker(),
-          ));
- 
-          ?>
-
+          <div class="p-2 h-100">
+            <div class="burger-header">
+              <h3>MENU</h3>
+            </div>
+            <div class="main-menu h-100 ">
+              <?php
+              wp_nav_menu( array(
+              'theme_location'  => 'header-menu',
+              'depth'           => 1, // 1 = no dropdowns, 2 = with dropdowns.
+              'container'       => 'ul',
+              'container_class' => ' ',
+              'container_id'    => ' ',
+              'menu_class'      => ' ',
+              'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+              'walker'          => new WP_Bootstrap_Navwalker(),
+              ));
+              ?>
+            </div>  
           </div>
-
-        </div>
-          
         </div> 
- 
-
-      </div>
-
-      
+      </div>  
     </div>
   </div>    
-</header>
-<?php /*
- 
-<div class="cookienotice-box" style="">
-  <div class="m-0 p-0 d-flex">
-    <a href="" class="cookienotice-box__close">X</a>
-  </div>
-  <p class="cookienotice-box__§">
-      We use cookies to improve your experience on our site. To find out more, read our privacy policy.
-  </p>
-  <a href="" class="cookienotice-box__link">Accepter</a>
-</div> 
-    <button class="btn button--scrollToTop"><span class="fa far fa-arrow-up text-white"></span></button>
-
-//*/ ?>
-
-
-<?php 
+</header> 
