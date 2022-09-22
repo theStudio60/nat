@@ -4,51 +4,38 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * 
- * 
  */
-
 ?> 
 <?php  
-  $imageUrl=get_the_post_thumbnail_url();
-
-	if( have_rows('group_oeuvre') ):
-		while( have_rows('group_oeuvre') ): the_row(); 
+$imageUrl=get_the_post_thumbnail_url();
+if( have_rows('group_oeuvre') ):
+	while( have_rows('group_oeuvre') ): the_row(); 
 		$desc = get_sub_field('description');
 		$price = get_sub_field('price');
 		$dimensions = get_sub_field('dimensions');
 		$date = get_sub_field('date');
 		$medium = get_sub_field('medium');
+	endwhile;
+endif;
 ?>
-	 
-
-				<?php
-
-		endwhile;
-	endif;
-?>
-	<?php if( have_rows('website_settings', 'option') ): ?>
-    <?php while( have_rows('website_settings', 'option') ): the_row(); ?>
-      <?php if( have_rows('group_auction') ): ?>
-        <?php while( have_rows('group_auction') ): the_row(); ?>
- 
-						<?php if( have_rows('group_buttons') ): ?>
-      			  <?php while( have_rows('group_buttons') ): the_row(); ?>
-			 
-
-								<?php $buttonSucre = get_sub_field("button_sucre"); ?>
-								<?php $buttonSel = get_sub_field("button_sel"); ?>
-								<?php $buttonCTA = get_sub_field("button_buy"); ?>
-									 
-      			  <?php endwhile; ?>
-      			<?php endif; ?>
-        <?php endwhile; ?>
-      <?php endif; ?>
-    <?php endwhile; ?>
-  <?php endif; ?>  
+<?php if( have_rows('website_settings', 'option') ): ?>
+  <?php while( have_rows('website_settings', 'option') ): the_row(); ?>
+    <?php if( have_rows('group_auction') ): ?>
+      <?php while( have_rows('group_auction') ): the_row(); ?>
+					<?php if( have_rows('group_buttons') ): ?>
+    			  <?php while( have_rows('group_buttons') ): the_row(); ?>
+							<?php $buttonSucre = get_sub_field("button_sucre"); ?>
+							<?php $buttonSel = get_sub_field("button_sel"); ?>
+							<?php $buttonCTA = get_sub_field("button_buy"); ?>
+    			  <?php endwhile; ?>
+    			<?php endif; ?>
+      <?php endwhile; ?>
+    <?php endif; ?>
+  <?php endwhile; ?>
+<?php endif; ?>  
 <script>
-	<?php $my_id = get_the_ID(); ?>
-	<?php $my_title = get_the_title(); ?>
+<?php $my_id = get_the_ID(); ?>
+<?php $my_title = get_the_title(); ?>
 function <?php echo "open" . "Sucre" . "Popup" . $my_id ."()" ?> {
   document.getElementById("sucreModal").classList.add("popup");
   document.getElementById("sucreModal").classList.remove("popup--hidden");
@@ -76,7 +63,6 @@ function <?php echo "close" . "Sel" . "Popup" . $my_id ."()" ?> {
 
 }
 </script>
-
 
 <div class="popup--hidden" style="height:100vh!important"id="sucreModal" tabindex="-1" role="dialog" aria-labelledby="sucreModalLabel" >
   <div class="modal-dialog " style="max-width:80%!important;" role="document">
@@ -118,7 +104,6 @@ function <?php echo "close" . "Sel" . "Popup" . $my_id ."()" ?> {
     </div>
   </div>
 </div>
-
 <div class="popup--hidden" style="height:100vh!important"id="selModal" tabindex="-1" role="dialog" aria-labelledby="selModalLabel" >
   <div class="modal-dialog " style="max-width:80%!important;" role="document">
     <div class="modal-content m-auto bg-dark border">
@@ -150,14 +135,11 @@ function <?php echo "close" . "Sel" . "Popup" . $my_id ."()" ?> {
  						    <?php endif; ?>
  						  <?php endwhile; ?>
  						<?php endif; ?>  
-				 
 					</div>
 					<div class="col-12 col-lg-6">
 						<?= do_shortcode('[gravityform id="3" title="false" description="false" ajax="true"]')?>
 					</div>
 				</div>
-
-
 			</div> 
     </div>
   </div>
@@ -165,31 +147,7 @@ function <?php echo "close" . "Sel" . "Popup" . $my_id ."()" ?> {
 <article  id="post-<?php the_ID(); ?>"
 class=" w-100 border  m-4  p-4 "
 style=" "
->  
-<?php /*
-<article  id="post-<?php the_ID(); ?>"
-class="p-2 h-100 w-100 m-0 d-block d-lg-none"
-style=" "
->
- <div class="col-12"
- style="height:70vh;background-size:contain;background-repeat:no-repeat;background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);"
- 
- >
-   
- </div>
-
- <div class="col-12 ">
- 	<?php the_content(); ?>
- </div>
-	     
-
-
-</article><!-- #post-<?php the_ID(); ?> -->
-
-//*/ ?>
-<!-- Modal -->
-
-
+>   
 	<div class="row h-100 d-flex p-0 m-0">
 		<div class="col-12 col-lg-8 d-flex p-4" >
 			<img style="overflow-y:scroll; max-height:480px; width:auto; "  class="img-fluid d-block d-lg-none m-auto" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
@@ -268,9 +226,7 @@ style=" "
 	</div>
 	<div class="col-12 col-lg-8 pt-3 ">
 		<div class="p-4  border">
-
-		<?php the_content(); ?>
-
+			<?php the_content(); ?>
 		</div>
   </div>
 	<div class="col-12 col-lg-4 py-4">
