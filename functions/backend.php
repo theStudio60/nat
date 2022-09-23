@@ -147,13 +147,22 @@ function register_page_menu_item() {
     );
  
     add_menu_page( 
+        'newsletter', 
+        'Inscription Newsletter', 
+        'edit_pages', 
+        'admin.php?page=gf_entries&view=entries&id=2', 
+        '', 
+        'dashicons-email', 
+         95
+    ); 
+    add_menu_page( 
         'messages', 
         'Messages', 
         'edit_pages', 
         'admin.php?page=gf_entries&view=entries&id=1', 
         '', 
         'dashicons-email', 
-         99
+         97
     );
     add_menu_page( 
         'déconnexion', 
