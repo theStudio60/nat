@@ -16,12 +16,18 @@ get_header();
  
         <?php
         while ( have_posts() ) :
-         the_post(); the_content();
+          the_post(); the_content();
         endwhile;
-        ?>
+        ?> 
+						                      <?= do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]')?>
+					       
+
       </div>
     </div>
   </div>
 </section>
+
+
+
 <?php
-get_footer();  
+get_footer();   
