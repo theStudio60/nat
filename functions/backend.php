@@ -31,7 +31,7 @@ add_filter('sanitize_file_name', 'remove_accents');
 /**
  *   add pages shortcuts in wp admin menu
  */
-/*(STAGE) 
+//*(STAGE) 
 
 add_action( 'admin_menu', 'register_page_menu_item' );
 function register_page_menu_item() {
@@ -39,9 +39,99 @@ function register_page_menu_item() {
         'homepage', 
         'Page d\'accueil', 
         'edit_pages', 
-        'post.php?post=28836&action=edit', 
+        'post.php?post=6&action=edit', 
         '', 
         'dashicons-admin-home', 
+        10
+    );
+    add_menu_page( 
+        'actualite', 
+        'Page actualité', 
+        'edit_pages', 
+        'post.php?post=10&action=edit', 
+        '', 
+        'dashicons-admin-page', 
+        11
+    );
+    add_menu_page( 
+        'concepts', 
+        'Page concepts', 
+        'edit_pages', 
+        'post.php?post=250&action=edit', 
+        '', 
+        'dashicons-admin-page', 
+        10
+    );
+    add_menu_page( 
+        'multimedias', 
+        'Page multimedias', 
+        'edit_pages', 
+        'post.php?post=12&action=edit', 
+        '', 
+        'dashicons-admin-page', 
+        10
+    );
+    add_menu_page( 
+        'multimedia-graphisme', 
+        'Page graphisme', 
+        'edit_pages', 
+        'post.php?post=257&action=edit', 
+        '', 
+        'dashicons-admin-page', 
+        10
+    );
+    add_menu_page( 
+        'multimedia-audios', 
+        'Page Sons', 
+        'edit_pages', 
+        'post.php?post=258&action=edit', 
+        '', 
+        'dashicons-admin-page', 
+        10
+    );
+    add_menu_page( 
+        'multimedia-videos', 
+        'Page Videos', 
+        'edit_pages', 
+        'post.php?post=255&action=edit', 
+        '', 
+        'dashicons-admin-page', 
+        10
+    );
+    add_menu_page( 
+        'oeuvres', 
+        'Page oeuvres', 
+        'edit_pages', 
+        'post.php?post=259&action=edit', 
+        '', 
+        'dashicons-admin-page', 
+        10
+    );
+    add_menu_page( 
+        'projets', 
+        'Page projets', 
+        'edit_pages', 
+        'post.php?post=261&action=edit', 
+        '', 
+        'dashicons-admin-page', 
+        10
+    );
+    add_menu_page( 
+        'search', 
+        'Page recherche', 
+        'edit_pages', 
+        'post.php?post=262&action=edit', 
+        '', 
+        'dashicons-admin-page', 
+        10
+    );
+    add_menu_page( 
+        'tags', 
+        'Page tags', 
+        'edit_pages', 
+        'post.php?post=263&action=edit', 
+        '', 
+        'dashicons-admin-page', 
         10
     );
  
