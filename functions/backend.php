@@ -148,9 +148,9 @@ function register_page_menu_item() {
  
     add_menu_page( 
         'newsletter', 
-        'Inscription Newsletter', 
+        'Inscriptions Newsletter', 
         'edit_pages', 
-        'admin.php?page=gf_entries&view=entries&id=2', 
+        'admin.php?page=gf_entries&view=entries&id=4', 
         '', 
         'dashicons-email', 
          95
