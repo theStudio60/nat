@@ -105,7 +105,7 @@ function register_page_menu_item() {
         'post.php?post=259&action=edit', 
         '', 
         'dashicons-admin-page', 
-        17
+        11
     );
     add_menu_page( 
         'projets', 
@@ -114,8 +114,19 @@ function register_page_menu_item() {
         'post.php?post=261&action=edit', 
         '', 
         'dashicons-admin-page', 
-        18
+        11
     );
+
+    add_menu_page( 
+        'textes', 
+        'Page textes', 
+        'edit_pages', 
+        'post.php?post=264&action=edit', 
+        '', 
+        'dashicons-admin-page', 
+        11
+    );
+
     add_menu_page( 
         'search', 
         'Page recherche', 
@@ -123,7 +134,7 @@ function register_page_menu_item() {
         'post.php?post=262&action=edit', 
         '', 
         'dashicons-admin-page', 
-        19
+        17
     );
     add_menu_page( 
         'tags', 
@@ -132,7 +143,7 @@ function register_page_menu_item() {
         'post.php?post=263&action=edit', 
         '', 
         'dashicons-admin-page', 
-        20
+        17
     );
  
     add_menu_page( 
