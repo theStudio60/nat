@@ -60,7 +60,7 @@ function register_page_menu_item() {
         'post.php?post=250&action=edit', 
         '', 
         'dashicons-admin-page', 
-        10
+        12
     );
     add_menu_page( 
         'multimedias', 
@@ -69,34 +69,34 @@ function register_page_menu_item() {
         'post.php?post=12&action=edit', 
         '', 
         'dashicons-admin-page', 
-        10
+        13
     );
     add_menu_page( 
         'multimedia-graphisme', 
-        'Page graphisme', 
+        '> Page graphisme', 
         'edit_pages', 
         'post.php?post=257&action=edit', 
         '', 
         'dashicons-admin-page', 
-        10
+        14
     );
     add_menu_page( 
         'multimedia-audios', 
-        'Page Sons', 
+        '> Page Sons', 
         'edit_pages', 
         'post.php?post=258&action=edit', 
         '', 
         'dashicons-admin-page', 
-        10
+        15
     );
     add_menu_page( 
         'multimedia-videos', 
-        'Page Videos', 
+        '> Page Videos', 
         'edit_pages', 
         'post.php?post=255&action=edit', 
         '', 
         'dashicons-admin-page', 
-        10
+        16
     );
     add_menu_page( 
         'oeuvres', 
@@ -105,7 +105,7 @@ function register_page_menu_item() {
         'post.php?post=259&action=edit', 
         '', 
         'dashicons-admin-page', 
-        10
+        17
     );
     add_menu_page( 
         'projets', 
@@ -114,7 +114,7 @@ function register_page_menu_item() {
         'post.php?post=261&action=edit', 
         '', 
         'dashicons-admin-page', 
-        10
+        18
     );
     add_menu_page( 
         'search', 
@@ -123,7 +123,7 @@ function register_page_menu_item() {
         'post.php?post=262&action=edit', 
         '', 
         'dashicons-admin-page', 
-        10
+        19
     );
     add_menu_page( 
         'tags', 
@@ -132,7 +132,7 @@ function register_page_menu_item() {
         'post.php?post=263&action=edit', 
         '', 
         'dashicons-admin-page', 
-        10
+        20
     );
  
     add_menu_page( 
