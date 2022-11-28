@@ -257,12 +257,6 @@ add_action( 'wp_before_admin_bar_render', function () {
 function my_mce4_options($init) {
 
     $custom_colors = '
-        "B8AAAA", "Gris clair",
-        "6B6359", "Gris foncé",
-        "E5065B", "Rose",
-        "7B2B5C", "Pourpre",
-        "3D152E", "Pourpre Foncé",
-        "FF5725", "Orange",
         "fff", "Blanc",
         "000", "Noir",
     ';
@@ -299,9 +293,9 @@ function remove_menus(){
   // Remove Dashboard -> Update Core notice
   remove_submenu_page( 'index.php', 'update-core.php' );
   // Remove Posts
-  remove_menu_page( 'edit.php' );
+//  remove_menu_page( 'edit.php' );
   // Remove Posts -> New post
-  remove_submenu_page( 'edit.php', 'post-new.php' );
+//  remove_submenu_page( 'edit.php', 'post-new.php' );
   // Remove Posts -> Categories
   // remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' );
   // Remove Posts -> Tags
