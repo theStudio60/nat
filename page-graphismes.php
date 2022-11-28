@@ -40,74 +40,44 @@ get_header();
           $loop->the_post();  
           //$link = get_field('link');
         ?> 
-        <?php 
-          if( have_rows('group_multimedia-graphisme') ): 
-            while( have_rows('group_multimedia-graphisme') ): the_row();  
+        <?php if( have_rows('group_multimedia-graphisme') ): 
+          while( have_rows('group_multimedia-graphisme') ): the_row();  
               $file = get_sub_field('image');
               //$type = get_sub_field('type');
               //$duration = get_sub_field('duration');
               $year = get_sub_field('date');
-               
            ?>
-
-            <?php endwhile; ?>
-          <?php endif ; ?>
- 
-          <div class="my-4" >
-          <?php 
-          /*
+          <?php endwhile; ?>
+        <?php endif ; ?>
+        <div class="my-4" >
+          <div class="py-3 my-2 border-top title--centered">
             <div
-             class="p-5" 
-             style="background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);"
+            onclick="location.href='<?php the_permalink(); ?>'" 
+            class="border mb-2"
+            style="
+             height:240px;
+             background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);
+             background-repeat:no-repeat;
+             background-size:cover;
+             background-position:center;
+             
+             "
             > 
             </div>
-            //*/ ?>
-             
-            <div class="py-3 my-2 border-top title--centered">
-
-              <?php // if ($file) : ?>  
-              <div
-              onclick="location.href='<?php the_permalink(); ?>'" 
-              class="border mb-2"
-              style="
-               height:240px;
-               background-image:url(<?php echo get_the_post_thumbnail_url(); ?>);
-               background-repeat:no-repeat;
-               background-size:cover;
-               background-position:center;
-               
-               "
-              > 
-              </div>
- 
-
-      
-                           
-              <?php // endif; ?>
+          </div>
+          <div class="w-100 d-flex py-1 mb-2 border-top border-bottom ">
+            <div class="w-75 border-right "> 
+              <h3 class="my-auto mr-auto text-white"><?php the_title(); ?>  </h3>
             </div>
-
-
-
-            <div class="w-100 d-flex py-1 mb-2 border-top border-bottom ">
-
-              <div class="w-75 border-right "> 
-                <h3 class="my-auto mr-auto text-white"><?php the_title(); ?>  </h3>
-              </div>
-              <div class="w-25 d-flex"> 
-                <span class="m-auto §--white §"><?= $year ?>  </span>
-              </div>
+            <div class="w-25 d-flex"> 
+              <span class="m-auto §--white §"><?= $year ?>  </span>
             </div>
-            
-            <div class="py-2 § §--white">
-              <?php    the_content();   ?>
-            </div>
-      
-  
-
-
-    
-            </div>
-          <br>
+          </div>
+          <div class="py-2 § §--white">
+            <?php    the_content();   ?>
+          </div>
+        </div>
+        <br>
         <?php endwhile?> 
         <?php wp_reset_postdata();?>
       </div>
