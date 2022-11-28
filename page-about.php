@@ -5,9 +5,16 @@
  * @package studio_soixante
  */
 get_header(); 
-?> 
-<div style="height:25vh;"></div>
+?>  
 <section id=" " class="section">
+  <div
+  class="d-none d-lg-block"
+  style="position: ;right:0;top:0; height:80vh;"
+  >
+  <?php 
+  get_template_part("partials/illustrations/about-desktop");
+  ?>
+  </div>
   <div class="section__container">
     <div class="section__row">
       <div class="col-12 col-md-10 col-lg-9 col-xl-8">
