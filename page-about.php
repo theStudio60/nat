@@ -42,7 +42,7 @@ get_header();
               <div class="col-12 col-lg-6 order-2 order-lg-1 my-5 my-lg-auto ">
                 <picture> 
                   <img src="<?= $thisImage['url'] ?> "
-                  class="img-fluid border" alt=" <?=$thisImage['title'] ?>">
+                  class="img-fluid" alt=" <?=$thisImage['title'] ?>">
                 </picture>
               </div>
               <div class="col-12 col-lg-6 order-1 order-lg-2  my-5 my-lg-auto">
