@@ -86,7 +86,9 @@
             pointer-events: auto;
             white-space: nowrap;
             box-sizing: border-box;
+
             transform: translatex(100vw);
+            transition:400ms;
             /* ie workaround */
             -ms-transform: translatex(-100vw);
             //border-top: 1px solid $white;
@@ -102,13 +104,17 @@
                 text-align: center;
                 display: block;
                 //padding: 1rem;
-                font-size: calc(36px - .5vw);
+                font-size: calc(32px - .5vw);
                 font-family: $font-family-serif;
                 font-weight: 700;
                 &:hover {
                     cursor: pointer;
                 }
             }
+                &:hover {
+                    cursor: pointer;
+                    background-color:$white;
+               a{color:$black;} }
         }
     }
 }
@@ -148,8 +154,8 @@ input.burger {
 label.burger {
     //background-color: rgba($black, 1);
     //@extend .my-1;
-    top: $spacer*2;
-    left: $spacer*2;
+    top:24px!important;
+    left: 24px;
     z-index: 9999;
     position: relative;
     display: block;
